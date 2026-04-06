@@ -16,8 +16,7 @@ function Herosection() {
         <source src="/video/vdooo.mp4" type="video/mp4" />
       </video>
 
-      {/* Subtle overlay for readability */}
-      <div className="absolute inset-0 z-[1] bg-white/50" />
+
 
       {/* Bottom white gradient blend */}
       <div className="absolute bottom-0 left-0 right-0 z-[2] h-40 bg-gradient-to-t from-white to-transparent" />
@@ -105,7 +104,7 @@ function Herosection() {
 
             {/* Description Text */}
               <div className="max-w-xs pl-3 ">
-                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed py-4">
+                <p className="text-xs sm:text-sm text-gray-900 leading-relaxed py-4">
                 Designed by experts. Delivered
                 <br />
                 through hands-on learning.

@@ -28,7 +28,7 @@ export default function Valuesection() {
 
           {/* Left Column: Mission + val1 */}
           <div className="md:col-span-4 flex flex-col gap-4">
-            <div className="bg-[#EEEEEE] rounded-[1.5rem] p-5  flex flex-col grow justify-center">
+            <div className="bg-[#EEEEEE] rounded-[1.5rem] px-5 py-2  flex flex-col grow justify-center">
               <h3 className="text-xl font-medium text-[#262626] mb-4 text-center">
                 Our Mission
               </h3>
@@ -44,13 +44,13 @@ export default function Valuesection() {
           {/* Middle Column: val2 (Tall) */}
           <div className="md:col-span-4 min-h-[200px] lg:min-h-0">
             <div className="relative h-full w-full rounded-[1.5rem] overflow-hidden shadow-sm">
-              <Image src="/home/val2.svg" alt="Value 2" fill className="object-contain" />
+              <Image src="/home/val2.svg" alt="Value 2" fill className="object-cover" />
             </div>
           </div>
 
           {/* Right Column: Vision + val3 */}
           <div className="md:col-span-4 flex flex-col gap-4">
-            <div className="bg-[#EEEEEE] rounded-[1.5rem] p-6 lg:p-8 flex flex-col grow justify-center">
+            <div className="bg-[#EEEEEE] rounded-[1.5rem] px-5 py-2 flex flex-col grow justify-center">
               <h3 className="text-xl font-medium text-[#262626] mb-4 text-center">
                 Our Vision
               </h3>

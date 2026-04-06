@@ -25,8 +25,8 @@ export default function Navbar() {
               src="/home/logo.png" // put inside public folder
               alt="logo"
               className="w-auto h-auto"
-              width={150}
-              height={100}
+              width={270}
+              height={150}
           
             />
           </div>

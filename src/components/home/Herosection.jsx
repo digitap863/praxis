@@ -5,19 +5,23 @@ import Image from "next/image";
 function Herosection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/home/bg.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 z-0 w-full h-full object-cover"
+      >
+        <source src="/video/vdooo.mp4" type="video/mp4" />
+      </video>
 
       {/* Subtle overlay for readability */}
-      <div className="absolute inset-0 z-[1] bg-white/60" />
+      <div className="absolute inset-0 z-[1] bg-white/50" />
+
+      {/* Bottom white gradient blend */}
+      <div className="absolute bottom-0 left-0 right-0 z-[2] h-40 bg-gradient-to-t from-white to-transparent" />
+
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 sm:pt-36 pb-20">
@@ -70,8 +74,8 @@ function Herosection() {
           <div className="flex flex-col sm:flex-row items-end justify-end gap-10 sm:gap-6 mt-4  relative ">
 
 
-            <div className="flex items-baseline gap-2 absolute top-0 right-[55%]  ">
-              <span className="text-4xl pt-2 text-[#1F1F1F] tracking-tighter leading-none">
+            <div className="flex items-center gap-2 absolute top-0 right-[55%] p-8 pl-28 pr-10 ">
+              <span className="text-4xl text-[#1F1F1F] tracking-tighter leading-none ">
                   99%
                 </span>
                 <div className="flex flex-col">
@@ -83,7 +87,7 @@ function Herosection() {
                   </span>
                 </div>
 
-                 <div className="flex items-center absolute -bottom-14 right-2 ">
+                 <div className="flex items-center absolute -bottom-7 right-10 ">
                 <Image src="/home/m100.png" alt="stat accent" width={320} height={150} className="h-28 w-60 -scale-x-100" />
               </div>
               
@@ -100,7 +104,7 @@ function Herosection() {
             </div>
 
             {/* Description Text */}
-              <div className="max-w-xs ">
+              <div className="max-w-xs pl-3 ">
                 <p className="text-xs sm:text-sm text-gray-700 leading-relaxed py-4">
                 Designed by experts. Delivered
                 <br />

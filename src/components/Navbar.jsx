@@ -50,9 +50,10 @@ export default function Navbar() {
 
           {/* 🔹 Contact Button */}
           <div className="hidden md:block">
-            <button className="bg-purple-700 text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
+            <Link href="/contact" className="flex items-center gap-2 bg-[#33187F] text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block"></span>
               Contact us
-            </button>
+            </Link>
           </div>
 
           {/* 🔹 Mobile Menu Button */}
@@ -82,10 +83,10 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <button className="flex items-center gap-3 bg-[#1E1B4B] text-white px-6 py-2.5 rounded-full hover:bg-opacity-90 transition text-sm font-medium">
+            <Link href="/contact" className="flex items-center gap-3 bg-[#1E1B4B] text-white px-6 py-2.5 rounded-full hover:bg-opacity-90 transition text-sm font-medium" onClick={() => setOpen(false)}>
             <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
             Contact us
-          </button>
+          </Link>
           </div>
         </div>
       </div>

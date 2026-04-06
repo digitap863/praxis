@@ -67,7 +67,7 @@ export default function Approach() {
           pin: true,
           scrub: 1,
           anticipatePin: 1,
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -95,7 +95,7 @@ export default function Approach() {
           {
             scale: 0.95,
             y: (index - 1) * 30,
-            boxShadow: "0 -10px 40px rgba(0,0,0,0.15)",
+            boxShadow: "0 -10px 40px rgba(0,0,0,0)",
             duration: 1,
             ease: "power2.out",
           },
@@ -156,7 +156,7 @@ export default function Approach() {
                     src={card.image}
                     alt={card.title}
                     fill
-                    className="object-contain drop-shadow-2xl"
+                    className="object-contain "
                     sizes="(max-width: 768px) 280px, 350px"
                   />
                 </div>

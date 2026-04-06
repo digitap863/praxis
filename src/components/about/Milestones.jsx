@@ -35,7 +35,7 @@ export default function Milestones() {
               key={index}
               className="bg-[#EEEEEE] rounded-[2rem] p-10 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1"
             >
-              <span className="text-4xl md:text-5xl font-bold text-[#262626] mb-4 font-neuropolitical ">
+              <span className="text-4xl md:text-5xl font-medium text-[#262626] mb-3 font-neuropolitical " style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}>
                 {item.value}
               </span>
               <p className="text-sm md:text-base font- text-[#6B7280]  ">

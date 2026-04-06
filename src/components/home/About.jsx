@@ -68,7 +68,7 @@ export default function About() {
             <div className="flex gap-4 md:gap-6 w-full">
               {/* Item 1: 40+ */}
               <div className="w-[calc(28%-0.75rem)] bg-[#EEEEEE] rounded-[2rem] p-4 md:p-6 flex flex-col justify-center items-center text-center aspect-[4.5/5]">
-                <span className="text-4xl md:text-5xl font-bold text-[#262626] mb-2 font-neuropolitical">40+</span>
+                <span className="text-4xl md:text-5xl font-medium text-[#262626] mb-2 font-neuropolitical" style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }} >40+</span>
                 <p className="text-[#262626] font-bold text-[8px] md:text-xs uppercase leading-tight tracking-widest">
                   Original <br/> Equipments
                 </p>
@@ -102,7 +102,7 @@ export default function About() {
 
               {/* Item 5: 10Y */}
               <div className="w-[calc(28%-0.75rem)] bg-[#EEEEEE] rounded-[2rem] p-4 md:p-6 flex flex-col justify-center items-center text-center aspect-[4.5/5]">
-                <span className="text-4xl md:text-5xl font-bold text-[#262626] mb-2 tracking-tighter uppercase font-neuropolitical">10y</span>
+                <span className="text-4xl md:text-5xl font-medium text-[#262626] mb-2 tracking-tighter uppercase font-neuropolitical" style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }} >10y</span>
                 <p className="text-[#262626] font-bold text-[8px] md:text-xs uppercase leading-tight tracking-widest">
                   Of Expertise
                 </p>
@@ -126,13 +126,13 @@ export default function About() {
             {/* Multiple renders for seamless loop */}
             {[...Array(4)].map((_, i) => (
               <React.Fragment key={i}>
-                <span className="text-[#0A7BFF] text-3xl md:text-5xl font-bold font-neuropolitical italic uppercase tracking-tighter">
+                <span className="text-[#0A7BFF] text-3xl md:text-5xl font-medium uppercase tracking-tighter" style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}>
                   From Knowledge to Clinical Mastery
                 </span>
                 <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl flex-shrink-0 bg-white">
                   <Image src="/home/marimg.png" alt="Marquee Icon" width={80} height={80} className="object-cover rounded-xl" />
                 </div>
-                <span className="text-[#0A7BFF] text-3xl md:text-5xl font-bold font-neuropolitical italic uppercase tracking-tighter">
+                <span className="text-[#0A7BFF] text-3xl md:text-5xl font-medium uppercase tracking-tighter" style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}>
                   The Science of Healing, The Art of Care
                 </span>
                 <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl flex-shrink-0 bg-white">
@@ -145,7 +145,7 @@ export default function About() {
 
         {/* Why Doctors Choose Praxis Image */}
         <div className="max-w-7xl mx-auto px-4 md:px-10">
-          <div className="relative w-full rounded-[3rem] overflow-hidden shadow-2xl">
+          <div className="relative w-full rounded-[3rem] overflow-hidden ">
             <Image 
               src="/home/aboutimg.png" 
               alt="Why Doctors Choose Praxis" 
@@ -155,7 +155,7 @@ export default function About() {
             />
             {/* Overlay Text */}
             <div className="absolute top-[45%] left-10 md:top-[45%] md:left-24 max-w-sm">
-              <h2 className="text-white text-3xl md:text-5xl font-medium  drop-shadow-lg">
+              <h2 className="text-white text-3xl md:text-5xl font-medium  ">
                 Why Doctors <br /> Choose Praxis?
               </h2>
             </div>

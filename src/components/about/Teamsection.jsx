@@ -38,7 +38,7 @@ export default function Teamsection() {
     <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-[#FAFAFA]  overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
-          <span className="text-[#262626] font-medium text-sm tracking-widest mb-4 block">
+          <span className="text-[#262626] font-medium text-sm  mb-4 block">
             Our Team
           </span>
           <h2 className="text-3xl md:text-4xl text-[#262626] leading-[1.1] tracking-tighter font-medium">

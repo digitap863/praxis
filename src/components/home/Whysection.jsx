@@ -83,7 +83,7 @@ export default function WhyPraxis() {
         >
         {/* Heading + description — stays visible while cards scroll */}
         <div className="flex-shrink-0 w-full lg:w-[50%]">
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900 leading-tight">
             Why Doctors
             <br />
           Choose Praxis?

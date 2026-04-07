@@ -30,19 +30,19 @@ export default function CourseList() {
             className="flex flex-col lg:flex-row items-center gap-10 lg:gap-8"
           >
             {/* Left: Image */}
-            <div className="w-full lg:w-[50%]">
-              <div className="relative w-full aspect-[20/10] overflow-hidden group">
+            <div className="w-full lg:w-[49%]">
+              <div className="relative w-full aspect-[20/10] overflow-hidden group border border-white border-2 overflow-hidden  rounded-[1rem]">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-contain transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             </div>
 
             {/* Right: Content */}
-            <div className="w-full lg:w-[45%] flex flex-col gap-6">
+            <div className="w-full lg:w-[45%] flex flex-col gap-6 ">
               <h2 className="text-3xl md:text-4xl text-[#262626] font-medium leading-[1.2] tracking-tighter">
                 {item.title}
               </h2>

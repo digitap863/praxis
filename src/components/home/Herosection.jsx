@@ -27,7 +27,7 @@ function Herosection() {
         {/* Main Heading */}
         <div className="max-w-3xl relative">
           <h1
-            className="text-4xl md:text-5xl font- leading-[1.3]  text-[#1F1F1F] mb-6"
+            className="text-4xl md:text-[3.7vw] font- leading-[1.2]  text-[#1F1F1F] mb-6"
             style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}
           >
             Evolve Your Surgical
@@ -43,21 +43,21 @@ function Herosection() {
             <div className="flex flex-col gap-2">
               {/* Stat row: big number + label side by side */}
               <div className="flex items-center gap-3">
-                <span className="text-4xl   pt-2 text-[#1F1F1F] tracking-tighter leading-none">
+                <span className="text-3xl   pt-2 text-[#1F1F1F] tracking-tighter leading-none">
                   100%
                 </span>
                 <div className="flex flex-col ">
-                  <span className="text-xs sm:text-base font-semibold text-[#1F1F1F]">
+                  <span className="text-xs sm:text-sm font-semibold text-[#1F1F1F]">
                     Commitment To
                   </span>
-                  <span className="text-xs sm:text-base font-semibold text-[#1F1F1F]">
+                  <span className="text-xs sm:text-sm font-semibold text-[#1F1F1F]">
                     Your Learning
                   </span>
                 </div>
               </div>
               {/* Blue bar with slant SVG ending */}
-              <div className="flex items-center absolute -bottom-14 right-2 ">
-                <Image src="/home/m100.png" alt="stat accent" width={320} height={150} className="h-28 w-auto" />
+              <div className="flex items-center absolute -bottom-13 right-1 ">
+                <Image src="/home/m100.png" alt="stat accent" width={300} height={150} className="h-26 w-auto" />
               </div>
             </div>
           </div>
@@ -73,20 +73,20 @@ function Herosection() {
           <div className="flex flex-col sm:flex-row items-end justify-end gap-10 sm:gap-6 mt-4  relative ">
 
 
-            <div className="flex items-center gap-2 absolute top-0 right-[55%] p-8 pl-28 pr-10 ">
-              <span className="text-4xl text-[#1F1F1F] tracking-tighter leading-none ">
+            <div className="flex items-center gap-2 absolute -top-10 right-[50%] p-8 pl-28 pr-10 ">
+              <span className="text-3xl text-[#1F1F1F] tracking-tighter leading-none ">
                   99%
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-xs sm:text-base font-semibold text-[#1F1F1F]">
+                  <span className="text-xs sm:text-sm font-semibold text-[#1F1F1F]">
                     Student
                   </span>
-                  <span className="text-xs sm:text-base font-semibold text-[#1F1F1F]">
+                  <span className="text-xs sm:text-sm font-semibold text-[#1F1F1F]">
                     Satisfaction
                   </span>
                 </div>
 
-                 <div className="flex items-center absolute -bottom-7 right-10 ">
+                 <div className="flex items-center absolute -bottom-5 right-6 ">
                 <Image src="/home/m100.png" alt="stat accent" width={320} height={150} className="h-28 w-60 -scale-x-100" />
               </div>
               

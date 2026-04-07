@@ -71,7 +71,7 @@ export default function ContactForm() {
         </div>
 
         {/* Right Column: Form Card */}
-        <div className="w-full lg:w-[60%] bg-[#EEEEEE]/60 rounded-[2.5rem] p-8  shadow-sm">
+        <div className="w-full lg:w-[60%] bg-[#EEEEEE]/60 rounded-[2.5rem] p-8   border border-white border-2">
           <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             {/* Name & Email Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -37,7 +37,7 @@ export default function Faq() {
           {/* Left: FAQ Content */}
           <div className="w-full lg:w-[55%]">
             <div className="mb-10">
-              <span className="text-[#262626] font-medium text-sm tracking-widest mb-2 block uppercase">
+              <span className="text-[#262626] font-medium text-sm  mb-2 block uppercase">
                 FAQ
               </span>
               <h2 className="text-4xl md:text-5xl text-[#262626] leading-[1.1] tracking-tighter font-medium">

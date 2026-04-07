@@ -32,7 +32,7 @@ export default function Milestones() {
           {milestones.map((item, index) => (
             <div
               key={index}
-              className="bg-[#EEEEEE] rounded-[2rem] p-10 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+              className="bg-[#EEEEEE] rounded-[2rem] p-10 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-1 border border-white border-2"
             >
               <span className="text-4xl md:text-5xl font-medium text-[#262626] mb-3 font-neuropolitical " style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}>
                 {item.value}

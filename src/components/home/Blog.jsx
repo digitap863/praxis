@@ -84,8 +84,8 @@ export default function Blog() {
         <div className="lg:pr-24">
           <div className="flex lg:flex-row flex-col lg:gap-x-52 gap-0 mb-0 w-full">
             <div className='lg:w-[59%] w-full'>
-              <span className="text-[#262626] font-medium text-sm tracking-widest mb-4">Blogs</span>
-              <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap">
+              <span className="text-[#262626] font-medium text-sm  mb-4">Blogs</span>
+              <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
                 News and Events
               </h2>
             </div>

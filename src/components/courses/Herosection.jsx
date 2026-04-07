@@ -7,7 +7,7 @@ export default function Herosection() {
     <section className="w-full px-4 md:px-10 lg:px-20 bg-[#FAFAFA]  overflow-hidden lg:pt-40">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl text-[#262626] font-medium mb-4 tracking-tighter">
+        <h1 className="text-4xl md:text-5xl text-[#262626] font-medium mb-5 tracking-tighter">
           The Training Journey
         </h1>
 
@@ -16,12 +16,12 @@ export default function Herosection() {
 
           {/* Left Column */}
           <div className="flex flex-col gap-10 w-full lg:w-[52%]">
-            <div className="relative w-full aspect-[20/10]  overflow-hidden ">
+            <div className="relative w-full aspect-[20/10] overflow-hidden border border-white border-2 rounded-[2rem] group">
               <Image
                 src="/courses/img1.svg"
                 alt="The Training Journey"
                 fill
-                className="object-contain"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
                 priority
               />
             </div>
@@ -35,12 +35,12 @@ export default function Herosection() {
           </div>
 
           {/* Right Column - Tall Image */}
-          <div className="relative w-full lg:min-h-0 aspect-[3.5/4] lg:aspect-[5/4] h-full overflow-hidden  w-full lg:w-[46%]">
+          <div className="relative w-full lg:min-h-0 aspect-[3.5/4] lg:aspect-[5/4] h-full overflow-hidden border border-white border-2 rounded-[2rem] group w-full lg:w-[46%]">
             <Image
               src="/courses/img2.svg"
               alt="Expert Training"
               fill
-              className="object-contain object-left"
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
               priority
             />
           </div>

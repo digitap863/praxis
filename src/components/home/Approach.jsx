@@ -114,7 +114,7 @@ export default function Approach() {
     <section className="w-full bg-[#FAFAFA] ">
       {/* Header */}
       <div className="text-center py-16 md:py-24">
-        <span className="text-[#262626] font-medium text-sm tracking-widest ">
+        <span className="text-[#262626] font-medium text-sm  ">
           Our Approach
         </span>
         <h2 className="text-4xl md:text-5xl font-medium text-[#262626] mt-4 tracking-tight">

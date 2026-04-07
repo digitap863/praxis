@@ -37,8 +37,8 @@ export default function Design() {
 
           {/* Left: Content Area */}
           <div className="w-full lg:w-[40%] flex flex-col text-left">
-            <span className="text-[#262626] font-medium text-sm tracking-widest mb-4">Who Praxis is for</span>
-            <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap">
+            <span className="text-[#262626] font-medium text-sm  mb-4">Who Praxis is for</span>
+            <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
               Designed for Doctors <br /> Committed to Excellence
             </h2>
 

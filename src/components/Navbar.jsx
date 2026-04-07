@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -24,9 +26,9 @@ export default function Navbar() {
             <Image
               src="/home/logo.png" // put inside public folder
               alt="logo"
-              className="w-auto h-auto"
-              width={270}
-              height={150}
+              className="w-auto h-10"
+              width={290}
+              height={170}
 
             />
           </div>
@@ -37,8 +39,13 @@ export default function Navbar() {
               <React.Fragment key={link.name}>
                 <Link
                   href={link.path}
-                  className="text-[#262626] font-medium hover:text-purple-600 transition text-sm lg:text-base"
+                  className={`flex items-center gap-1.5 font-medium transition text-sm lg:text-base ${
+                    pathname === link.path ? "text-[#262626]" : "text-gray-500 hover:text-purple-600"
+                  }`}
                 >
+                  {pathname === link.path && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block"></span>
+                  )}
                   {link.name}
                 </Link>
                 {index < navLinks.length - 1 && (
@@ -50,8 +57,8 @@ export default function Navbar() {
 
           {/* 🔹 Contact Button */}
           <div className="hidden md:block">
-            <Link href="/contact" className="flex items-center gap-2 bg-[#33187F] text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block"></span>
+            <Link href="/contact" className="flex items-center gap-2 bg-[#33187F] text-white px-5 py-2.5 rounded-full hover:bg-purple-800 transition group shadow-lg">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block group-hover:bg-pink-500  transition-all duration-300"></span>
               Contact us
             </Link>
           </div>
@@ -75,15 +82,20 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.path}
-                className="text-gray-700 font-medium hover:text-purple-600"
+                className={`flex items-center gap-2 font-medium transition ${
+                  pathname === link.path ? "text-purple-700" : "text-gray-700 hover:text-purple-600"
+                }`}
                 onClick={() => setOpen(false)}
               >
+                {pathname === link.path && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                )}
                 {link.name}
               </Link>
             ))}
 
-            <Link href="/contact" className="flex items-center gap-3 bg-[#1E1B4B] text-white px-6 py-2.5 rounded-full hover:bg-opacity-90 transition text-sm font-medium" onClick={() => setOpen(false)}>
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+            <Link href="/contact" className="flex items-center gap-3 bg-[#1E1B4B] text-white px-6 py-2.5 rounded-full hover:bg-opacity-90 transition text-sm font-medium group" onClick={() => setOpen(false)}>
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 group-hover:bg-pink-500 transition-all duration-300"></span>
               Contact us
             </Link>
           </div>

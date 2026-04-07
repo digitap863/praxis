@@ -4,7 +4,7 @@
 export default function Ceosection() {
   return (
     <section className="w-full px-4 md:px-10 lg:px-20 py-20 bg-[#FAFAFA] ">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto border border-white border-2">
         <h2 className="text-3xl md:text-4xl text-[#262626] font-medium mb-12 tracking-tight">
           CEO’s Closing Statement <br /> for the Page
         </h2>

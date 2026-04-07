@@ -2,6 +2,7 @@
 
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Link from "next/link"
 import { useRef, useState } from "react"
 import "swiper/css"
 import "swiper/css/navigation"
@@ -75,6 +76,8 @@ const blogPosts = [
 export default function Service() {
   const sectionRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [prevEl, setPrevEl] = useState(null)
+  const [nextEl, setNextEl] = useState(null)
 
 
   return (
@@ -83,9 +86,9 @@ export default function Service() {
         <div className="lg:pr-24">
           <div className="flex lg:flex-row flex-col lg:gap-x-52 gap-0 mb-0 w-full">
             <div className='lg:w-[59%] w-full'>
-              <span className="text-[#262626] font-medium text-sm tracking-widest mb-4">About Us</span>
-              <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap">
-                Learning That <br /> Transforms Practice
+              <span className="text-[#262626] font-medium text-sm  mb-4">Courses</span>
+              <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
+                Explore Our Training <br /> Programs
               </h2>
               <p className="text-sm ">
                 Praxis offers focused medical training programs tailored to enhance clinical <br className="lg:block hidden" />
@@ -97,21 +100,21 @@ export default function Service() {
         <div className="relative mt-10">
           <Swiper
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-            spaceBetween={10}
+            spaceBetween={20}
             slidesPerView={1}
             modules={[Navigation]}
             className="mySwiper"
             navigation={{
-              prevEl: '.slidePrev-btnn',
-              nextEl: '.slideNext-btnn'
+              prevEl,
+              nextEl,
             }}
             breakpoints={{
-              640: { slidesPerView: 1, spaceBetween: 10 },
-              768: { slidesPerView: 2, spaceBetween: 10 },
-              1024: { slidesPerView: 3, spaceBetween: 10 },
-              1280: { slidesPerView: 3, spaceBetween: 10 },
-              1440: { slidesPerView: 3.5, spaceBetween: 10 },
-              1920: { slidesPerView: 3.5, spaceBetween: 10 },
+              640: { slidesPerView: 1, spaceBetween: 20 },
+              768: { slidesPerView: 2, spaceBetween: 20 },
+              1024: { slidesPerView: 3, spaceBetween: 20 },
+              1280: { slidesPerView: 3, spaceBetween: 20 },
+              1440: { slidesPerView: 3.5, spaceBetween: 20 },
+              1920: { slidesPerView: 3.5, spaceBetween: 20 },
             }}
           >
             {blogPosts.map((post, index) => (
@@ -124,7 +127,7 @@ export default function Service() {
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-auto rounded-xl object-cover aspect-[5.9/3]"
+                      className="w-full h-auto rounded-xl object-cover aspect-[5.9/3] border border-white border-2"
                     />
                   </div>
                   <div className="py-6 lg:px-2 px-1 flex flex-col w-full">
@@ -135,7 +138,33 @@ export default function Service() {
             ))}
           </Swiper>
 
+          <div className="flex justify-between items-center mt-12 px-2">
+            <div className="flex gap-4">
+              <button
+                ref={(node) => setPrevEl(node)}
+                className="w-12 h-12 rounded-full bg-[#33187F] text-white flex items-center justify-center hover:bg-opacity-90 transition shadow-lg cursor-pointer"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                ref={(node) => setNextEl(node)}
+                className="w-12 h-12 rounded-full bg-[#33187F] text-white flex items-center justify-center hover:bg-opacity-90 transition shadow-lg cursor-pointer"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
 
+            <Link href="/courses">
+              <button className="flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition group font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
+                See All Programs
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -91,12 +91,12 @@ export default function BlogPage() {
             >
               {/* Image Column */}
               <div className="w-full md:w-[55%] ">
-                <div className="relative w-full aspect-[21/9] md:aspect-[24/9]  rounded-lg overflow-hidden  ">
+                <div className="relative w-full aspect-[21/9] md:aspect-[24/9] overflow-hidden border border-2 border-white rounded-2xl  ">
                   <Image
                     src={blog.image}
                     alt={blog.title}
                     fill
-                    className="object-contain  w-full h-auto transition-transform duration-700 hover:scale-105 "
+                    className="object-cover  w-full h-auto transition-transform duration-700 hover:scale-105 "
                   />
                 </div>
               </div>

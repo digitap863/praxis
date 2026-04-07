@@ -30,28 +30,30 @@ export default function AboutHero() {
             <div className="w-full">
                 <Swiper
                     modules={[Autoplay]}
-                    spaceBetween={10}
-                    slidesPerView="auto"      // ← key change: lets each slide control its own width
-                    centeredSlides={true}
+                    spaceBetween={20}
+                    slidesPerView="auto"
                     loop={true}
+                    speed={6000}
                     autoplay={{
-                        delay: 3000,
+                        delay: 0,
                         disableOnInteraction: false,
                     }}
-                    className="w-full"
+                    onSwiper={(swiper) => {
+                        swiper.wrapperEl.style.transitionTimingFunction = "linear";
+                    }}
+                    className="w-full about-hero-swiper"
                 >
                     {aboutImages.map((img, index) => (
                         <SwiperSlide
                             key={index}
-                            style={{ width: `${img.width}vw` }}
+                            style={{ width: `${img.width + 5}vw` }}
                         >
-                            <div className="relative w-full h-[280px] md:h-[300px] rounded-xl overflow-hidden shadow-sm">
-                                {/* ↑ replace aspect-[4/3] md:aspect-[16/10] with a fixed height */}
+                            <div className="relative w-full h-[280px] md:h-[300px] rounded-[2rem] overflow-hidden border border-white border-2 group">
                                 <Image
                                     src={img.src}
                                     alt={`About Praxis ${index + 1}`}
                                     fill
-                                    className="object-cover"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                             </div>
                         </SwiperSlide>

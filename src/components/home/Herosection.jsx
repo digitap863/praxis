@@ -27,7 +27,7 @@ function Herosection() {
         {/* Main Heading */}
         <div className="max-w-3xl relative">
           <h1
-            className="text-4xl md:text-[3.7vw] font- leading-[1.2]  text-[#1F1F1F] mb-6"
+            className="text-4xl md:text-[3.5vw] font- leading-[1.2]  text-[#1F1F1F] mb-6"
             style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}
           >
             Evolve Your Surgical

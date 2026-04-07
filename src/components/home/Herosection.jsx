@@ -19,7 +19,7 @@ function Herosection() {
 
 
       {/* Bottom white gradient blend */}
-      <div className="absolute bottom-0 left-0 right-0 z-[2] h-40 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 z-[2] h-40 bg-gradient-to-t from-[#FAFAFA] to-transparent" />
 
 
       {/* Content */}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -22,9 +22,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-white">
+    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-[#FAFAFA] ">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start pt-20">
-        
+
         {/* Left Column: Info */}
         <div className="w-full lg:w-[40%] flex flex-col gap-10">
           <div>
@@ -82,7 +82,7 @@ export default function ContactForm() {
                   id="name"
                   name="name"
                   placeholder="Ex. Jane tecs"
-                  className="w-full bg-white rounded-2xl px-6 py-3 outline-none focus:ring-2 focus:ring-[#33187F]/20 transition-all text-[#262626]"
+                  className="w-full bg-[#FAFAFA]  rounded-2xl px-6 py-3 outline-none focus:ring-2 focus:ring-[#33187F]/20 transition-all text-[#262626]"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -95,7 +95,7 @@ export default function ContactForm() {
                   id="email"
                   name="email"
                   placeholder="Ex. jane@example.com"
-                  className="w-full bg-white rounded-2xl px-6 py-3 outline-none focus:ring-2 focus:ring-[#33187F]/20 transition-all text-[#262626]"
+                  className="w-full bg-[#FAFAFA]  rounded-2xl px-6 py-3 outline-none focus:ring-2 focus:ring-[#33187F]/20 transition-all text-[#262626]"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -111,7 +111,7 @@ export default function ContactForm() {
                 id="phone"
                 name="phone"
                 placeholder="Ex.(91) 7839318948"
-                className="w-full bg-white rounded-2xl px-6 py-3 outline-none focus:ring-2 focus:ring-[#33187F]/20 transition-all text-[#262626]"
+                className="w-full bg-[#FAFAFA]  rounded-2xl px-6 py-3 outline-none focus:ring-2 focus:ring-[#33187F]/20 transition-all text-[#262626]"
                 value={formData.phone}
                 onChange={handleChange}
                 required
@@ -126,7 +126,7 @@ export default function ContactForm() {
                 name="message"
                 rows="5"
                 placeholder="Write your message here..."
-                className="w-full bg-white rounded-3xl px-6 py-3 outline-none focus:ring-2 focus:ring-[#33187F]/20 transition-all text-[#262626] resize-none"
+                className="w-full bg-[#FAFAFA]  rounded-3xl px-6 py-3 outline-none focus:ring-2 focus:ring-[#33187F]/20 transition-all text-[#262626] resize-none"
                 value={formData.message}
                 onChange={handleChange}
                 required

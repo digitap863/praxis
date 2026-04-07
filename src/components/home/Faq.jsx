@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -30,10 +30,10 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-white">
+    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-[#FAFAFA] ">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
-          
+
           {/* Left: FAQ Content */}
           <div className="w-full lg:w-[55%]">
             <div className="mb-10">
@@ -61,11 +61,10 @@ export default function Faq() {
                       </span>
                     </div>
                   </button>
-                  
-                  <div 
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      openIndex === index ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'
-                    }`}
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'
+                      }`}
                   >
                     <p className="text-[#4B5563] text-sm md:text-base leading-relaxed pl-9">
                       {faq.answer}

@@ -1,16 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 
 const aboutImages = [
     { src: "/home/abouimg1.png", width: 20 },
     { src: "/home/abouimg2.png", width: 30 },
     { src: "/home/abouimg3.png", width: 20 },
     { src: "/home/abouimg4.png", width: 20 },
-     { src: "/home/abouimg1.png", width: 20 },
+    { src: "/home/abouimg1.png", width: 20 },
     { src: "/home/abouimg2.png", width: 30 },
     { src: "/home/abouimg3.png", width: 20 },
     { src: "/home/abouimg4.png", width: 20 },
@@ -18,7 +18,7 @@ const aboutImages = [
 
 export default function AboutHero() {
     return (
-        <section className="w-full py-20 bg-white overflow-hidden">
+        <section className="w-full py-20 bg-[#FAFAFA]  overflow-hidden">
             <div className="max-w-7xl mx-auto px-4   md:pt-20">
                 <div className="mb-12">
                     <h1 className="text-4xl md:text-5xl font-medium text-[#262626] leading-[1.1] tracking-tighter">

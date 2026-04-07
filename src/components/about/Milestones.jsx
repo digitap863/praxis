@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 
 const milestones = [
   {
@@ -23,7 +22,7 @@ const milestones = [
 
 export default function Milestones() {
   return (
-    <section className="w-full py-4 bg-white">
+    <section className="w-full py-4 bg-[#FAFAFA] ">
       <div className="max-w-7xl mx-auto px-4 md:px-4 text-center">
         <h2 className="text-3xl md:text-4xl text-[#262626] font-medium mb-16 tracking-tight ">
           Milestones that define excellence
@@ -31,7 +30,7 @@ export default function Milestones() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {milestones.map((item, index) => (
-            <div 
+            <div
               key={index}
               className="bg-[#EEEEEE] rounded-[2rem] p-10 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1"
             >

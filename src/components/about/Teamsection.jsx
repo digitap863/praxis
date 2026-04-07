@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 
 const teamMembers = [
@@ -8,7 +7,7 @@ const teamMembers = [
     name: "Dr. Matthew Harris",
     role: "Founder & CEO",
     description: "Dentist providing comprehensive dental care, from checkups to cosmetic solutions.",
-    image: "/home/doc.png", 
+    image: "/home/doc.png",
     isMain: true,
   },
   {
@@ -36,7 +35,7 @@ const teamMembers = [
 
 export default function Teamsection() {
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-white overflow-hidden">
+    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-[#FAFAFA]  overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
           <span className="text-[#262626] font-medium text-sm tracking-widest mb-4 block">
@@ -51,9 +50,8 @@ export default function Teamsection() {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className={`relative rounded-[1.5rem] p-8 flex flex-col justify-between min-h-[370px] transition-transform hover:scale-[1.02] duration-300 shadow-sm ${
-                member.isMain ? "bg-[#EEEEEE]" : "bg-[#007BFF]"
-              }`}
+              className={`relative rounded-[1.5rem] p-8 flex flex-col justify-between min-h-[370px] transition-transform hover:scale-[1.02] duration-300 shadow-sm ${member.isMain ? "bg-[#EEEEEE]" : "bg-[#007BFF]"
+                }`}
             >
               <div className="z-10">
                 <h3 className={`text-2xl font-medium  mb-1 ${member.isMain ? "text-[#262626]" : "text-white"}`}>
@@ -68,7 +66,7 @@ export default function Teamsection() {
               {member.isMain && (
                 <div className="absolute inset-0 flex items-end justify-center pointer-events-none">
                   <div className="relative w-full h-[100%] mt-auto opacity-100">
-                     <Image src={member.image} fill className="object-contain object-bottom" />
+                    <Image src={member.image} fill className="object-contain object-bottom" />
                   </div>
                 </div>
               )}

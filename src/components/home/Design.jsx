@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 
 const targetAudiences = [
@@ -32,12 +31,12 @@ const targetAudiences = [
 
 export default function Design() {
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-white overflow-hidden">
+    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-[#FAFAFA]  overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-stretch gap-16 lg:gap-24">
-          
+
           {/* Left: Content Area */}
-             <div className="w-full lg:w-[40%] flex flex-col text-left">
+          <div className="w-full lg:w-[40%] flex flex-col text-left">
             <span className="text-[#262626] font-medium text-sm tracking-widest mb-4">Who Praxis is for</span>
             <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap">
               Designed for Doctors <br /> Committed to Excellence

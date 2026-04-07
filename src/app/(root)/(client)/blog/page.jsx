@@ -56,7 +56,7 @@ export default function BlogPage() {
   );
 
   return (
-    <main className="w-full bg-white py-24 px-4 md:px-10 lg:px-20">
+    <main className="w-full bg-[#FAFAFA]  py-24 px-4 md:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto flex flex-col gap-12 lg:pt-20 ">
         {/* Page Header */}
         <div className="text-center flex flex-col gap-8">

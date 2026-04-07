@@ -1,37 +1,36 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="w-full px-4 md:px-5 py-10">
       {/* 🔹 Top Gradient CTA Section */}
-      <div className="relative w-full max-w-7xl mx-auto rounded-[3rem] overflow-hidden px-10 py-10 md:px-24 md:py-20 bg-gradient-to-br from-[#D1A3FF] via-[#8594FF] to-[#3B82F6] flex flex-col items-center text-center text-white">
-        
+      <div className="relative w-full max-w-7xl mx-auto rounded-[3rem] overflow-hidden px-10 py-10 md:px-24 md:py-20 bg-gradient-to-br from-[#D4B0FF] via-[#8594FF] to-[#0C7CFF] flex flex-col items-center text-center text-white">
+
         {/* Decorative Floating Images (Positioned like the mockup) */}
         <div className="absolute top-10 left-10 hidden lg:block">
-          <Image src="/home/foot1.png" alt="Medical 1" width={220} height={150} className="rounded-2xl shadow-xl transform   transition hover:scale-105" />
+          <Image src="/home/foot1.png" alt="Medical 1" width={220} height={150} className="rounded-2xl transform   transition hover:scale-105" />
         </div>
         <div className="absolute top-10 right-10 hidden lg:block">
-          <Image src="/home/foot2.png" alt="Medical 2" width={220} height={150} className="rounded-2xl shadow-xl transform  transition hover:scale-105" />
+          <Image src="/home/foot2.png" alt="Medical 2" width={220} height={150} className="rounded-2xl transform  transition hover:scale-105" />
         </div>
         <div className="absolute bottom-16 left-28 hidden lg:block">
-          <Image src="/home/foot2.png" alt="Medical 3" width={220} height={150} className="rounded-2xl shadow-xl transform  transition hover:scale-105" />
+          <Image src="/home/foot2.png" alt="Medical 3" width={220} height={150} className="rounded-2xl transform  transition hover:scale-105" />
         </div>
         <div className="absolute bottom-16 right-28 hidden lg:block">
           {/* Using foot2 or foot3 as a placeholder for the 4th image if missing, or maybe foot1 repeated */}
-          <Image src="/home/foot3.png" alt="Medical 4" width={220} height={150} className="rounded-2xl shadow-xl transform   transition hover:scale-105" />
+          <Image src="/home/foot3.png" alt="Medical 4" width={220} height={150} className="rounded-2xl transform   transition hover:scale-105" />
         </div>
 
         {/* Content */}
         <div className="relative z-10 max-w-3xl">
           <p className="text-white/80 text-sm font-semibold tracking-widest mb-4">Enroll Today</p>
           <h2 className="text-4xl md:text-5xl font- mb-6 tracking-tight ">
-            Advance Your <br/>  Clinical Confidence with Praxis
+            Advance Your <br />  Clinical Confidence with Praxis
           </h2>
           <p className="text-white/90 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
-            Join a learning environment where knowledge is applied, skills are refined, 
+            Join a learning environment where knowledge is applied, skills are refined,
             and doctors are prepared for the realities of modern medical practice.
           </p>
 
@@ -40,7 +39,7 @@ export default function Footer() {
               <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
               Enroll in a Program
             </button>
-            <button className="flex items-center gap-3 bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-3 rounded-full hover:bg-white/30 transition shadow-lg group">
+            <button className="flex items-center gap-3 bg-[#FAFAFA]/]  border border-white/90 text-white px-8 py-3 rounded-full hover:bg-[#FAFAFA]/30 transition group">
               <span className="w-2 h-2 rounded-full bg-pink-400 group-hover:scale-125 transition"></span>
               Chat with Our Team
             </button>
@@ -57,9 +56,9 @@ export default function Footer() {
 
         {/* Subscription Input */}
         <div className="relative w-full md:max-w-md bg-[#EEEEEE] border border-gray-400 rounded-full p-1 pl-6 flex items-center shadow-inner">
-          <input 
-            type="email" 
-            placeholder="example@praxis.com" 
+          <input
+            type="email"
+            placeholder="example@praxis.com"
             className="flex-grow bg-transparent border-none outline-none text-gray-700 text-sm"
           />
           <button className="flex items-center gap-3 bg-[#1E1B4B] text-white px-6 py-2.5 rounded-full hover:bg-opacity-90 transition text-sm font-medium">
@@ -68,7 +67,7 @@ export default function Footer() {
           </button>
         </div>
       </div>
-      
+
       {/* 🔹 Copyright */}
       <div className="mt-8 text-center text-gray-400 text-xs">
         &copy; {new Date().getFullYear()} Praxis Clinical Training. All rights reserved.

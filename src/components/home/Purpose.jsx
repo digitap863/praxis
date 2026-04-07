@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
 
 export default function Purpose() {
   return (
-    <section className="w-full px-4 md:px-10 py-6 bg-white overflow-hidden">
+    <section className="w-full px-4 md:px-10 py-6 bg-[#FAFAFA]  overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10">
           <span className="text-[#262626] font-medium text-sm tracking-widest mb-2 block ">
@@ -22,8 +21,8 @@ export default function Purpose() {
               Our Mission
             </h3>
             <p className="text-[#262626] text-sm md:text-base  max-w-full">
-              To empower doctors with precise, practical, and clinically relevant training 
-              that enhances patient care, strengthens professional competence, and 
+              To empower doctors with precise, practical, and clinically relevant training
+              that enhances patient care, strengthens professional competence, and
               elevates medical practice standards.
             </p>
           </div>
@@ -34,8 +33,8 @@ export default function Purpose() {
               Our Vision
             </h3>
             <p className="text-[#262626] text-sm md:text-base  max-w-full">
-              To become a trusted global leader in medical education by shaping 
-              highly skilled, confident, and practice-ready doctors through excellence 
+              To become a trusted global leader in medical education by shaping
+              highly skilled, confident, and practice-ready doctors through excellence
               in training, innovation, and continuous learning.
             </p>
           </div>

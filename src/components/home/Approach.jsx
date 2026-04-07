@@ -111,7 +111,7 @@ export default function Approach() {
   }, []);
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-[#FAFAFA] ">
       {/* Header */}
       <div className="text-center py-16 md:py-24">
         <span className="text-[#262626] font-medium text-sm tracking-widest ">

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Valuesection() {
   return (
-    <section className="w-full px-4 md:px-4 py-24 bg-white overflow-hidden">
+    <section className="w-full px-4 md:px-4 py-24 bg-[#FAFAFA]  overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 border border-white  ">

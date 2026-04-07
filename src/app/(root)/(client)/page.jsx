@@ -6,12 +6,16 @@ import Design from "@/components/home/Design";
 import Purpose from "@/components/home/Purpose";
 import Faq from "@/components/home/Faq";
 import Blog from "@/components/home/Blog";
+import Whysection from "@/components/home/Whysection";
+
+
 
 export default function Home() {
   return (
     <>
       <Herosection />
       <About />
+      <Whysection />
       <Approach />
       <Service />
       <Design />

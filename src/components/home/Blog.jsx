@@ -1,16 +1,14 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from "swiper/modules"
-import { Autoplay } from "swiper/modules"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useRef, useState } from "react"
 import "swiper/css"
-import "swiper/css/navigation"
 import "swiper/css/autoplay"
+import "swiper/css/navigation"
+import { Autoplay, Navigation } from "swiper/modules"
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { isMobile } from "react-device-detect"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,18 +75,18 @@ const blogPosts = [
 export default function Blog() {
   const sectionRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
-    
+
 
 
   return (
-    <div className="relative h-auto overflow-hidden bg-white relative" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-4 lg:py-12 py-6 relative bg-white">
+    <div className="relative h-auto overflow-hidden bg-[#FAFAFA]  relative" ref={sectionRef}>
+      <div className="max-w-7xl mx-auto px-4 lg:py-12 py-6 relative bg-[#FAFAFA] ">
         <div className="lg:pr-24">
           <div className="flex lg:flex-row flex-col lg:gap-x-52 gap-0 mb-0 w-full">
             <div className='lg:w-[59%] w-full'>
               <span className="text-[#262626] font-medium text-sm tracking-widest mb-4">Blogs</span>
               <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap">
-                News and Events 
+                News and Events
               </h2>
             </div>
           </div>
@@ -98,7 +96,7 @@ export default function Blog() {
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             spaceBetween={10}
             slidesPerView={1}
-            modules={[Navigation,Autoplay]}
+            modules={[Navigation, Autoplay]}
             className="mySwiper"
             navigation={{
               prevEl: '.slidePrev-btnn',
@@ -122,7 +120,7 @@ export default function Blog() {
                 key={index}
                 className={`w-full`}
               >
-                <div className={`bg-white rounded-lg overflow-hidden h-full flex flex-col`}>
+                <div className={`bg-[#FAFAFA]  rounded-lg overflow-hidden h-full flex flex-col`}>
                   <div className="w-full">
                     <img
                       src={post.image}

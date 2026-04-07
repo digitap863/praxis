@@ -1,13 +1,12 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { GoArrowLeft, GoArrowRight } from "react-icons/go"
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from "swiper/modules"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useRef, useState } from "react"
 import "swiper/css"
 import "swiper/css/navigation"
+import { Navigation } from "swiper/modules"
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { isMobile } from "react-device-detect"
 
@@ -76,11 +75,11 @@ const blogPosts = [
 export default function Service() {
   const sectionRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
-    
+
 
   return (
     <div className="relative h-auto overflow-hidden" ref={sectionRef}>
-      <div className="max-w-7xl  mx-auto px-4 lg:py-12 py-6 relative bg-white">
+      <div className="max-w-7xl  mx-auto px-4 lg:py-12 py-6 relative bg-[#FAFAFA] ">
         <div className="lg:pr-24">
           <div className="flex lg:flex-row flex-col lg:gap-x-52 gap-0 mb-0 w-full">
             <div className='lg:w-[59%] w-full'>
@@ -89,7 +88,7 @@ export default function Service() {
                 Learning That <br /> Transforms Practice
               </h2>
               <p className="text-sm ">
-                Praxis offers focused medical training programs tailored to enhance clinical <br className="lg:block hidden"/> 
+                Praxis offers focused medical training programs tailored to enhance clinical <br className="lg:block hidden" />
                 capability across various specialties and skill levels.
               </p>
             </div>
@@ -120,7 +119,7 @@ export default function Service() {
                 key={index}
                 className={`w-full ${index === activeIndex && !isMobile ? 'first-visible-slide' : ''}`}
               >
-                <div className={`bg-white rounded-lg overflow-hidden h-full flex flex-col`}>
+                <div className={`bg-[#FAFAFA]  rounded-lg overflow-hidden h-full flex flex-col`}>
                   <div className="w-full">
                     <img
                       src={post.image}

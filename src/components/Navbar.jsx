@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function Navbar() {
               className="w-auto h-auto"
               width={270}
               height={150}
-          
+
             />
           </div>
 
@@ -51,7 +51,7 @@ export default function Navbar() {
           {/* 🔹 Contact Button */}
           <div className="hidden md:block">
             <Link href="/contact" className="flex items-center gap-2 bg-[#33187F] text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block"></span>
               Contact us
             </Link>
           </div>
@@ -67,11 +67,10 @@ export default function Navbar() {
 
         {/* 🔹 Mobile Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            open ? "max-h-96 mt-4" : "max-h-0"
-          }`}
+          className={`md:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-96 mt-4" : "max-h-0"
+            }`}
         >
-          <div className="flex flex-col gap-4 bg-white p-4 rounded-xl shadow-md">
+          <div className="flex flex-col gap-4 bg-[#FAFAFA]  p-4 rounded-xl shadow-md">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -84,9 +83,9 @@ export default function Navbar() {
             ))}
 
             <Link href="/contact" className="flex items-center gap-3 bg-[#1E1B4B] text-white px-6 py-2.5 rounded-full hover:bg-opacity-90 transition text-sm font-medium" onClick={() => setOpen(false)}>
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-            Contact us
-          </Link>
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              Contact us
+            </Link>
           </div>
         </div>
       </div>

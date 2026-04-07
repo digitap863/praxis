@@ -53,7 +53,7 @@ export default function WhyPraxis() {
           scrub: 1,
           anticipatePin: 1,
           invalidateOnRefresh: true,
-          markers: true,
+        //   markers: true,
         },
       });
 

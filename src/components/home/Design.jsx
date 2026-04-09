@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const targetAudiences = [
   {
@@ -36,7 +37,13 @@ export default function Design() {
         <div className="flex flex-col lg:flex-row items-stretch gap-16 lg:gap-24">
 
           {/* Left: Content Area */}
-          <div className="w-full lg:w-[40%] flex flex-col text-left">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full lg:w-[40%] flex flex-col text-left"
+          >
             <span className="text-[#262626] font-medium text-sm  mb-4">Who Praxis is for</span>
             <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
               Designed for Doctors <br /> Committed to Excellence
@@ -51,10 +58,16 @@ export default function Design() {
                 Learn More
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: The Diagram Section */}
-          <div className="w-full lg:w-[60%] relative flex justify-center items-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="w-full lg:w-[60%] relative flex justify-center items-center"
+          >
             <div className="relative w-full max-w-[650px] aspect-[4.5/3.4]">
               {/* The BG Circle Image */}
               <div className="absolute inset-0">
@@ -68,9 +81,13 @@ export default function Design() {
               </div>
 
               {/* Data Points */}
-              {targetAudiences.map((point) => (
-                <div
+              {targetAudiences.map((point, index) => (
+                <motion.div
                   key={point.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 + (index * 0.2) }}
                   className="absolute p-2"
                   style={{
                     top: point.top,
@@ -92,10 +109,10 @@ export default function Design() {
                       {point.text}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -29,11 +30,23 @@ export default function ContactFaq() {
   return (
     <section className="w-full px-4 md:px-10 lg:px-20 py-10 bg-[#FAFAFA]  overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
-        <h2 className="text-4xl md:text-5xl text-[#262626] font-medium leading-[1.1] tracking-tighter">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl text-[#262626] font-medium leading-[1.1] tracking-tighter"
+        >
           Frequently Asked <br /> Questions
-        </h2>
+        </motion.h2>
 
-        <div className="w-full">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="w-full"
+        >
           <Swiper
             modules={[Autoplay]}
             spaceBetween={20}
@@ -55,7 +68,7 @@ export default function ContactFaq() {
           >
             {faqs.map((faq, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-[#EEEEEE] rounded-[1.5rem] p-6 min-h-[160px] flex flex-col gap-4 shadow-sm transition-all duration-300 border border-2 border-white ">
+                <div className="bg-[#EEEEEE] rounded-[1.5rem] p-6 min-h-[160px] flex flex-col gap-4 shadow-sm transition-all duration-300 border border-2 border-white hover:-translate-y-1">
                   <h3 className="text-lg  font-medium text-[#262626] leading-snug">
                     {faq.question}
                   </h3>
@@ -66,7 +79,7 @@ export default function ContactFaq() {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

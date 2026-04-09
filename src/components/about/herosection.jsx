@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,14 +21,26 @@ export default function AboutHero() {
     return (
         <section className="w-full py-20 bg-[#FAFAFA]  overflow-hidden">
             <div className="max-w-7xl mx-auto px-4   md:pt-20">
-                <div className="mb-12">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="mb-12"
+                >
                     <h1 className="text-4xl md:text-5xl font-medium text-[#262626] leading-[1.1] tracking-tighter">
                         Learning That <br /> Transforms Practice
                     </h1>
-                </div>
+                </motion.div>
             </div>
 
-            <div className="w-full">
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.2 }}
+                className="w-full"
+            >
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={20}
@@ -59,7 +72,7 @@ export default function AboutHero() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-            </div>
+            </motion.div>
         </section>
     );
 }

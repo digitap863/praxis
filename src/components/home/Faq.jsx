@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -36,18 +37,31 @@ export default function Faq() {
 
           {/* Left: FAQ Content */}
           <div className="w-full lg:w-[55%]">
-            <div className="mb-10">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8 }}
+              className="mb-10"
+            >
               <span className="text-[#262626] font-medium text-sm  mb-2 block uppercase">
                 FAQ
               </span>
               <h2 className="text-4xl md:text-5xl text-[#262626] leading-[1.1] tracking-tighter font-medium">
                 Frequently Asked Questions
               </h2>
-            </div>
+            </motion.div>
 
             <div className="space-y-0">
               {faqs.map((faq, index) => (
-                <div key={index} className="border-b border-gray-200">
+                <motion.div 
+                  key={index} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="border-b border-gray-200"
+                >
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                     className="w-full py-5 flex items-center justify-between text-left group"
@@ -70,13 +84,19 @@ export default function Faq() {
                       {faq.answer}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* Right: Image */}
-          <div className="w-full lg:w-[45%] sticky top-24 self-start">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1 }}
+            className="w-full lg:w-[45%] sticky top-24 self-start"
+          >
             <div className="relative aspect-square md:aspect-[4/5] lg:aspect-square w-full rounded-[2.5rem] overflow-hidden shadow-xl">
               <Image
                 src="/home/faqimg.png"
@@ -85,7 +105,7 @@ export default function Faq() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
+import { motion } from "framer-motion";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
@@ -93,7 +95,7 @@ export default function Approach() {
         tl.to(
           cardElements[index - 1],
           {
-            scale: 0.95,
+            // scale: 0.95,
             y: (index - 1) * 30,
             boxShadow: "0 -10px 40px rgba(0,0,0,0)",
             duration: 1,
@@ -113,13 +115,25 @@ export default function Approach() {
   return (
     <section className="w-full bg-[#FAFAFA] ">
       {/* Header */}
-      <div className="text-center py-16 md:py-24">
-        <span className="text-[#262626] font-medium text-sm  ">
+      <div className="text-center pt-16 md:pt-16">
+        <motion.span 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-[#262626] font-medium text-sm  "
+        >
           Our Approach
-        </span>
-        <h2 className="text-4xl md:text-5xl font-medium text-[#262626] mt-4 tracking-tight">
+        </motion.span>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-4xl md:text-5xl font-medium text-[#262626] mt-4 tracking-tight"
+        >
           How Praxis Training Works
-        </h2>
+        </motion.h2>
       </div>
 
       {/* Stacking Cards Section */}

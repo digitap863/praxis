@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function Herosection() {
   return (
@@ -16,17 +17,17 @@ function Herosection() {
         <source src="/video/vdooo.mp4" type="video/mp4" />
       </video>
 
-
-
       {/* Bottom white gradient blend */}
       <div className="absolute bottom-0 left-0 right-0 z-[2] h-40 bg-gradient-to-t from-[#FAFAFA] to-transparent" />
-
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 sm:pt-36 pb-20">
         {/* Main Heading */}
         <div className="max-w-3xl relative">
-          <h1
+          <motion.h1
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-[3.5vw] font- leading-[1.2]  text-[#1F1F1F] mb-6"
             style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}
           >
@@ -35,11 +36,14 @@ function Herosection() {
             DNA with Precision by
             <br />
             Practice Till Perfection.
-          </h1>
+          </motion.h1>
 
-
-
-           <div className="flex justify-center sm:justify-end sm:pr-16 md:pr-32 relative absolute -bottom-2 -right-60 ">
+           <motion.div 
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+             className="flex justify-center sm:justify-end sm:pr-16 md:pr-32 relative absolute -bottom-2 -right-60 "
+           >
             <div className="flex flex-col gap-2">
               {/* Stat row: big number + label side by side */}
               <div className="flex items-center gap-3">
@@ -60,10 +64,7 @@ function Herosection() {
                 <Image src="/home/m100.png" alt="stat accent" width={300} height={150} className="h-26 w-auto" />
               </div>
             </div>
-          </div>
-
-
-
+          </motion.div>
         </div>
 
         {/* Stats & Info Row */}
@@ -71,9 +72,12 @@ function Herosection() {
 
           {/* 99% Stat + Spring + Description */}
           <div className="flex flex-col sm:flex-row items-end justify-end gap-10 sm:gap-6 mt-4  relative ">
-
-
-            <div className="flex items-center gap-2 absolute -top-10 right-[50%] p-8 pl-28 pr-10 ">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="flex items-center gap-2 absolute -top-10 right-[50%] p-8 pl-28 pr-10 "
+            >
               <span className="text-3xl text-[#1F1F1F] tracking-tighter leading-none ">
                   99%
                 </span>
@@ -89,15 +93,15 @@ function Herosection() {
                  <div className="flex items-center absolute -bottom-5 right-6 ">
                 <Image src="/home/m100.png" alt="stat accent" width={320} height={150} className="h-28 w-60 -scale-x-100" />
               </div>
-              
-              </div>
-
-
-
+            </motion.div>
 
             {/* Spring / Coil SVG */}
-
-            <div className="flex ">
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              className="flex "
+            >
               <div className="hidden sm:flex items-end justify-center  ">
                 <Image src="/home/round.png" alt="spring" width={100} height={200} />
             </div>
@@ -114,10 +118,7 @@ function Herosection() {
                 improve patient care.
               </p>
             </div>
-            </div>
-
-
-
+            </motion.div>
           </div>
         </div>
       </div>

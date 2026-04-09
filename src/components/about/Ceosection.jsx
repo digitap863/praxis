@@ -1,17 +1,30 @@
 "use client";
 
+import { motion } from "framer-motion";
 
 export default function Ceosection() {
   return (
     <section className="w-full px-4 md:px-10 lg:px-20 py-20 bg-[#FAFAFA] ">
-      <div className="max-w-7xl mx-auto border border-white border-2">
-        <h2 className="text-3xl md:text-4xl text-[#262626] font-medium mb-12 tracking-tight">
+      <div className="max-w-7xl mx-auto ">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl text-[#262626] font-medium mb-12 tracking-tight"
+        >
           CEO’s Closing Statement <br /> for the Page
-        </h2>
+        </motion.h2>
 
-        <div className="bg-[#EEEEEE]/80 rounded-[2.5rem] p-8   flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-[#EEEEEE]/80 rounded-[2.5rem] p-8 flex flex-col md:flex-row items-center gap-10 md:gap-16 border border-white border-2"
+        >
           {/* Avatar/Image Placeholder */}
-          <div className="relative w-full max-w-[300px] aspect-square rounded-[2rem] overflow-hidden bg-gray-400 shrink-0 shadow-sm transition-transform hover:scale-[1.02] duration-300">
+          <div className="relative w-full max-w-[300px] aspect-square rounded-[2rem] overflow-hidden bg-gray-400 shrink-0 shadow-sm">
             {/* 
               If you have a CEO image, replace this with:
               <Image src="/home/ceo.png" alt="CEO" fill className="object-cover" /> 
@@ -29,7 +42,7 @@ export default function Ceosection() {
               we are curating excellence.”
             </blockquote>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

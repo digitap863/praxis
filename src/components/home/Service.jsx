@@ -1,17 +1,14 @@
 "use client"
 
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import Link from "next/link"
 import { useRef, useState } from "react"
+import { motion } from "framer-motion"
+import Link from "next/link"
 import "swiper/css"
 import "swiper/css/navigation"
 import { Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { isMobile } from "react-device-detect"
-
-gsap.registerPlugin(ScrollTrigger);
 
 const blogPosts = [
   {
@@ -84,7 +81,13 @@ export default function Service() {
     <div className="relative h-auto overflow-hidden" ref={sectionRef}>
       <div className="max-w-7xl  mx-auto px-4 lg:py-12 py-6 relative bg-[#FAFAFA] ">
         <div className="lg:pr-24">
-          <div className="flex lg:flex-row flex-col lg:gap-x-52 gap-0 mb-0 w-full">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8 }}
+            className="flex lg:flex-row flex-col lg:gap-x-52 gap-0 mb-0 w-full"
+          >
             <div className='lg:w-[59%] w-full'>
               <span className="text-[#262626] font-medium text-sm  mb-4">Courses</span>
               <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
@@ -95,7 +98,7 @@ export default function Service() {
                 capability across various specialties and skill levels.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="relative mt-10">
           <Swiper
@@ -120,9 +123,14 @@ export default function Service() {
             {blogPosts.map((post, index) => (
               <SwiperSlide
                 key={index}
-                className={`w-full ${index === activeIndex && !isMobile ? 'first-visible-slide' : ''}`}
-              >
-                <div className={`bg-[#FAFAFA]  rounded-lg overflow-hidden h-full flex flex-col`}>
+                className={`w-full ${index === activeIndex && !isMobile ? 'first-visible-slide' : ''}`}>
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className={`bg-[#FAFAFA]  rounded-lg overflow-hidden h-full flex flex-col`}
+                >
                   <div className="w-full">
                     <img
                       src={post.image}
@@ -133,12 +141,18 @@ export default function Service() {
                   <div className="py-6 lg:px-2 px-1 flex flex-col w-full">
                     <h3 className="mb-2 text-lg font-medium text-[#262626]">{post.title}</h3>
                   </div>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
 
-          <div className="flex justify-between items-center mt-12 px-2">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex justify-between items-center mt-12 px-2"
+          >
             <div className="flex gap-4">
               <button
                 ref={(node) => setPrevEl(node)}
@@ -164,7 +178,7 @@ export default function Service() {
                 See All Programs
               </button>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

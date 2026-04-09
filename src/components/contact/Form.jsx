@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -26,7 +27,13 @@ export default function ContactForm() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start pt-20">
 
         {/* Left Column: Info */}
-        <div className="w-full lg:w-[40%] flex flex-col gap-10">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="w-full lg:w-[40%] flex flex-col gap-10"
+        >
           <div>
             <h1 className="text-4xl md:text-5xl text-[#262626] font-medium leading-[1.1] tracking-tighter mb-6">
               Get in Touch with <br />  Praxis
@@ -68,14 +75,26 @@ export default function ContactForm() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column: Form Card */}
-        <div className="w-full lg:w-[60%] bg-[#EEEEEE]/60 rounded-[2.5rem] p-8   border border-white border-2">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full lg:w-[60%] bg-[#EEEEEE]/60 rounded-[2.5rem] p-8   border border-white border-2"
+        >
           <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             {/* Name & Email Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-3">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex flex-col gap-3"
+              >
                 <label className="text-[#262626] font-medium text-sm ml-1" htmlFor="name">Full name</label>
                 <input
                   type="text"
@@ -87,8 +106,14 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                 />
-              </div>
-              <div className="flex flex-col gap-3">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex flex-col gap-3"
+              >
                 <label className="text-[#262626] font-medium text-sm ml-1" htmlFor="email">Email Address</label>
                 <input
                   type="email"
@@ -100,11 +125,17 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                 />
-              </div>
+              </motion.div>
             </div>
 
             {/* Phone Number Row */}
-            <div className="flex flex-col gap-3">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex flex-col gap-3"
+            >
               <label className="text-[#262626] font-medium text-sm ml-1" htmlFor="phone">Phone Number</label>
               <input
                 type="tel"
@@ -116,10 +147,16 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
               />
-            </div>
+            </motion.div>
 
             {/* Message Row */}
-            <div className="flex flex-col gap-3">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="flex flex-col gap-3"
+            >
               <label className="text-[#262626] font-medium text-sm ml-1" htmlFor="message">Tell us your message</label>
               <textarea
                 id="message"
@@ -131,19 +168,25 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
               />
-            </div>
+            </motion.div>
 
             {/* Submit Button */}
-            <div className="pt-2">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="pt-2"
+            >
               <button
                 type="submit"
                 className="w-full bg-[#2B1B8B] text-white font-medium py-3 rounded-full hover:bg-[#33187F] transition-all transform hover:scale-[1.01] active:scale-[0.99] shadow-lg"
               >
                 Submit
               </button>
-            </div>
+            </motion.div>
           </form>
-        </div>
+        </motion.div>
 
       </div>
     </section>

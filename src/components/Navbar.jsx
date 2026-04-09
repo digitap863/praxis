@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,19 +18,23 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full fixed top-0 z-50 ">
+    <motion.nav 
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="w-full fixed top-0 z-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-4 py-3">
         <div className="flex items-center justify-between">
 
           {/* 🔹 Logo */}
           <div className="flex items-center gap-2">
             <Image
-              src="/home/logo.png" // put inside public folder
+              src="/home/logo.png"
               alt="logo"
               className="w-auto h-10"
               width={290}
               height={170}
-
             />
           </div>
 
@@ -68,39 +73,46 @@ export default function Navbar() {
             onClick={() => setOpen(!open)}
             className="md:hidden text-2xl text-purple-700"
           >
-            ☰
+            {open ? "✕" : "☰"}
           </button>
         </div>
 
         {/* 🔹 Mobile Menu */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-96 mt-4" : "max-h-0"
-            }`}
-        >
-          <div className="flex flex-col gap-4 bg-[#FAFAFA]  p-4 rounded-xl shadow-md">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.path}
-                className={`flex items-center gap-2 font-medium transition ${
-                  pathname === link.path ? "text-purple-700" : "text-gray-700 hover:text-purple-600"
-                }`}
-                onClick={() => setOpen(false)}
-              >
-                {pathname === link.path && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                )}
-                {link.name}
-              </Link>
-            ))}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden overflow-hidden mt-4"
+            >
+              <div className="flex flex-col gap-4 bg-[#FAFAFA]  p-4 rounded-xl shadow-md border border-gray-100">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.path}
+                    className={`flex items-center gap-2 font-medium transition ${
+                      pathname === link.path ? "text-purple-700" : "text-gray-700 hover:text-purple-600"
+                    }`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {pathname === link.path && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                    )}
+                    {link.name}
+                  </Link>
+                ))}
 
-            <Link href="/contact" className="flex items-center gap-3 bg-[#1E1B4B] text-white px-6 py-2.5 rounded-full hover:bg-opacity-90 transition text-sm font-medium group" onClick={() => setOpen(false)}>
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 group-hover:bg-pink-500 transition-all duration-300"></span>
-              Contact us
-            </Link>
-          </div>
-        </div>
+                <Link href="/contact" className="flex items-center gap-3 bg-[#1E1B4B] text-white px-6 py-2.5 rounded-full hover:bg-opacity-90 transition text-sm font-medium group" onClick={() => setOpen(false)}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 group-hover:bg-pink-500 transition-all duration-300"></span>
+                  Contact us
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

@@ -1,16 +1,13 @@
 "use client"
 
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useRef, useState } from "react"
+import { motion } from "framer-motion"
 import "swiper/css"
 import "swiper/css/autoplay"
 import "swiper/css/navigation"
 import { Autoplay, Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-
-gsap.registerPlugin(ScrollTrigger);
 
 const blogPosts = [
   {
@@ -82,14 +79,20 @@ export default function Blog() {
     <div className="relative h-auto overflow-hidden bg-[#FAFAFA]  relative" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 lg:py-12 py-6 relative bg-[#FAFAFA] ">
         <div className="lg:pr-24">
-          <div className="flex lg:flex-row flex-col lg:gap-x-52 gap-0 mb-0 w-full">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8 }}
+            className="flex lg:flex-row flex-col lg:gap-x-52 gap-0 mb-0 w-full"
+          >
             <div className='lg:w-[59%] w-full'>
               <span className="text-[#262626] font-medium text-sm  mb-4">Blogs</span>
               <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
                 News and Events
               </h2>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="relative">
           <Swiper
@@ -120,7 +123,13 @@ export default function Blog() {
                 key={index}
                 className={`w-full`}
               >
-                <div className={`bg-[#FAFAFA]  rounded-lg overflow-hidden h-full flex flex-col`}>
+                <motion.div 
+                  // initial={{ opacity: 0, y: 30 }}
+                  // whileInView={{ opacity: 1, y: 0 }}
+                  // viewport={{ once: true }}
+                  // transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className={`bg-[#FAFAFA]  rounded-lg overflow-hidden h-full flex flex-col`}
+                >
                   <div className="w-full">
                     <img
                       src={post.image}
@@ -132,7 +141,7 @@ export default function Blog() {
                     <h3 className="mb-2 text-lg font-medium text-[#262626]">{post.title}</h3>
                     <p className="text-sm text-[#262626]">{post.excerpt}</p>
                   </div>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>

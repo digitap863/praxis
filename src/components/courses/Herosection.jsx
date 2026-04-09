@@ -1,21 +1,34 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Herosection() {
   return (
     <section className="w-full px-4 md:px-10 lg:px-20 bg-[#FAFAFA]  overflow-hidden lg:pt-40">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl text-[#262626] font-medium mb-5 tracking-tighter">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-[3.5vw] text-[#262626] font-medium mb-5 tracking-tighter"
+        >
           The Training Journey
-        </h1>
+        </motion.h1>
 
         {/* content grid */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
 
           {/* Left Column */}
-          <div className="flex flex-col gap-10 w-full lg:w-[52%]">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col gap-10 w-full lg:w-[52%]"
+          >
             <div className="relative w-full aspect-[20/10] overflow-hidden border border-white border-2 rounded-[2rem] group">
               <Image
                 src="/courses/img1.svg"
@@ -32,10 +45,16 @@ export default function Herosection() {
               Education, identifying the specific technical and cognitive needs of the
               individual and providing a 360-degree support structure to meet them.
             </p>
-          </div>
+          </motion.div>
 
           {/* Right Column - Tall Image */}
-          <div className="relative w-full lg:min-h-0 aspect-[3.5/4] lg:aspect-[5/4] h-full overflow-hidden border border-white border-2 rounded-[2rem] group w-full lg:w-[46%]">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative w-full lg:min-h-0 aspect-[3.5/4] lg:aspect-[5/4] h-full overflow-hidden border border-white border-2 rounded-[2rem] group w-full lg:w-[46%]"
+          >
             <Image
               src="/courses/img2.svg"
               alt="Expert Training"
@@ -43,7 +62,7 @@ export default function Herosection() {
               className="object-cover transition-transform duration-700 group-hover:scale-110"
               priority
             />
-          </div>
+          </motion.div>
 
         </div>
       </div>

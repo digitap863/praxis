@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const courseHighlights = [
   {
+// ... same items
     title: "The Surgical Gene: The Digital Synapse",
     description: "The 360° Digital Mentorship Program Every \"Gene\" we evolve is supported by a continuous digital link to our mastery hub. This isn't a library of videos; it is a live, breathing support system",
     image: "/courses/img3.svg",
@@ -25,8 +27,12 @@ export default function CourseList() {
     <section className="w-full px-4 md:px-10 lg:px-20 py-20 bg-[#FAFAFA] ">
       <div className="max-w-7xl mx-auto flex flex-col gap-20">
         {courseHighlights.map((item, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: index * 0.1 }}
             className="flex flex-col lg:flex-row items-center gap-10 lg:gap-8"
           >
             {/* Left: Image */}
@@ -57,7 +63,7 @@ export default function CourseList() {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

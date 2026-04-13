@@ -28,7 +28,7 @@ const faqs = [
 
 export default function ContactFaq() {
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 py-10 bg-[#FAFAFA]  overflow-hidden">
+    <section className="w-full px-4 md:px-10 lg:px-20 md:py-10 py-10 bg-[#FAFAFA]  overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}

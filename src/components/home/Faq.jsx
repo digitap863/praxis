@@ -31,7 +31,7 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-[#FAFAFA] ">
+    <section className="w-full px-3 md:px-10 lg:px-20 md:py-24 py-10 bg-[#FAFAFA] ">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
 
@@ -42,7 +42,7 @@ export default function Faq() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8 }}
-              className="mb-10"
+              className="md:mb-10 mb-6"
             >
               <span className="text-[#262626] font-medium text-sm  mb-2 block uppercase">
                 FAQ
@@ -102,6 +102,7 @@ export default function Faq() {
                 src="/home/faqimg.png"
                 alt="Medical Professional in Surgery"
                 fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
               />
             </div>

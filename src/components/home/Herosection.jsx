@@ -28,21 +28,23 @@ function Herosection() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl md:text-[3.5vw] font- leading-[1.2]  text-[#1F1F1F] mb-6"
+            className="text-3xl md:text-[3.5vw] font- leading-[1.2]  text-[#1F1F1F] mb-6"
             style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}
           >
-            Evolve Your Surgical
-            <br />
-            DNA with Precision by
-            <br />
-            Practice Till Perfection.
+          <span>Evolve Your Surgical </span>
+            <br className="md:block hidden" />
+            <span>DNA</span>
+            <br className="md:hidden block" />
+            <span> with Precision by</span>
+             <br className="md:block hidden"/>
+            <span>Practice Till Perfection.</span>
           </motion.h1>
 
            <motion.div 
              initial={{ opacity: 0, y: 30 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-             className="flex justify-center sm:justify-end sm:pr-16 md:pr-32 relative absolute -bottom-2 -right-60 "
+             className="flex justify-center sm:justify-end sm:pr-16 md:pr-32 relative absolute -bottom-2 md:-right-60 -right-10 "
            >
             <div className="flex flex-col gap-2">
               {/* Stat row: big number + label side by side */}
@@ -60,8 +62,8 @@ function Herosection() {
                 </div>
               </div>
               {/* Blue bar with slant SVG ending */}
-              <div className="flex items-center absolute -bottom-13 right-1 ">
-                <Image src="/home/m100.png" alt="stat accent" width={300} height={150} className="h-26 w-auto" />
+              <div className="flex items-center absolute -bottom-13 md:right-1 -right-8 ">
+                <Image src="/home/m100.png" alt="stat accent" width={300} height={150} className="md:h-26 h-24 w-auto" />
               </div>
             </div>
           </motion.div>
@@ -76,7 +78,7 @@ function Herosection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="flex items-center gap-2 absolute -top-10 right-[50%] p-8 pl-28 pr-10 "
+              className="flex items-center gap-2 absolute -top-10 md:right-[50%] right-[30%] p-8 pl-28 pr-10 "
             >
               <span className="text-3xl text-[#1F1F1F] tracking-tighter leading-none ">
                   99%
@@ -100,10 +102,10 @@ function Herosection() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-              className="flex "
+              className=" md:flex  hidden "
             >
               <div className="hidden sm:flex items-end justify-center  ">
-                <Image src="/home/round.png" alt="spring" width={100} height={200} />
+                <Image src="/home/round.png" alt="spring" width={100} height={200} style={{ width: 'auto', height: 'auto' }} />
             </div>
 
             {/* Description Text */}

@@ -35,6 +35,9 @@ const teamMembers = [
   },
 ];
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
 function TeamCard({ member, index }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -46,7 +49,7 @@ function TeamCard({ member, index }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="relative rounded-[1.5rem] overflow-hidden min-h-[400px] shadow-sm group cursor-pointer"
+      className="relative rounded-[1.5rem] overflow-hidden min-h-[400px] shadow-sm group cursor-pointer h-full"
     >
       {/* Background Image - Always present */}
       <div className="absolute inset-0">
@@ -71,11 +74,8 @@ function TeamCard({ member, index }) {
         }}
       />
 
-      {/* Gradient overlay for better text readability on reveal */}
-      {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> */}
-
       {/* Content Container */}
-      <div className="relative h-full p-8 flex flex-col justify-between z-10">
+      <div className="relative h-full p-8 flex flex-col justify-between z-10 min-h-[400px]">
         {/* Top Content */}
         <motion.div
           animate={{
@@ -175,7 +175,7 @@ function TeamCard({ member, index }) {
 
 export default function Teamsection() {
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-[#FAFAFA] overflow-hidden">
+    <section className="w-full px-4 md:px-10 lg:px-20 md:py-24 py-16 bg-[#FAFAFA] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -187,12 +187,28 @@ export default function Teamsection() {
           <span className="text-[#262626] font-medium text-sm mb-4 block">
             Our Team
           </span>
-          <h2 className="text-4xl md:text-5xl text-[#262626] leading-[1.1] tracking-tighter font-medium">
-            Meet the Core Team Providing <br /> Expert Training
+          <h2 className="text-3xl md:text-5xl text-[#262626] leading-[1.1] tracking-tighter font-medium">
+            Meet the Core Team Providing <br className="hidden md:block" /> Expert Training
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Mobile: Swiper */}
+        <div className="sm:hidden w-full">
+          <Swiper
+            spaceBetween={16}
+            slidesPerView={1.2}
+            className="w-full !overflow-visible"
+          >
+            {teamMembers.map((member, index) => (
+              <SwiperSlide key={index}>
+                <TeamCard member={member} index={index} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Desktop/Tablet: Grid */}
+        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-4">
           {teamMembers.map((member, index) => (
             <TeamCard key={index} member={member} index={index} />
           ))}

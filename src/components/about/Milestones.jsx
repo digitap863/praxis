@@ -59,12 +59,12 @@ export default function Milestones() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl text-[#262626] font-medium mb-16 tracking-tight "
+          className="text-3xl md:text-4xl text-[#262626] font-medium md:mb-16 mb-10 tracking-tight "
         >
           Milestones that define excellence
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {milestones.map((item, index) => (
             <motion.div
               key={index}
@@ -73,9 +73,9 @@ export default function Milestones() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-[#EEEEEE] rounded-[2rem] p-10 flex flex-col items-center justify-center text-center border border-white border-2 shadow-sm"
+              className="bg-[#EEEEEE] md:rounded-[2rem] rounded-2xl p-6 md:p-10 flex flex-col items-center justify-center text-center border border-white border-2 "
             >
-              <span className="text-4xl md:text-5xl font-medium text-[#262626] mb-3 font-neuropolitical " style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}>
+              <span className="text-3xl md:text-5xl font-medium text-[#262626] mb-3 font-neuropolitical " style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }}>
                 <Counter value={item.value} suffix={item.suffix} />
               </span>
               <p className="text-sm md:text-base font- text-[#6B7280]  ">

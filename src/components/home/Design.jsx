@@ -26,15 +26,17 @@ const targetAudiences = [
     id: 4,
     text: "Medical professionals transitioning\ninto advanced roles",
     bottom: "5%",
-    left: "40%",
+    left: "37%",
   },
 ];
 
+
+
 export default function Design() {
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-[#FAFAFA]  overflow-hidden">
+    <section className="w-full px-3 md:px-10 lg:px-20 md:py-24 py-10 bg-[#FAFAFA]  overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-stretch gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-24">
 
           {/* Left: Content Area */}
           <motion.div 
@@ -45,15 +47,15 @@ export default function Design() {
             className="w-full lg:w-[40%] flex flex-col text-left"
           >
             <span className="text-[#262626] font-medium text-sm  mb-4">Who Praxis is for</span>
-            <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
-              Designed for Doctors <br /> Committed to Excellence
+            <h2 className="text-4xl md:text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
+              Designed for Doctors <br /> Committed to <br className="md:hidden block"/> Excellence
             </h2>
 
-            <div className="mt-auto">
+            <div className="mt-auto  ">
               <p className="text-[#4B5563] text-sm leading-relaxed mb-10 max-w-lg">
                 Praxis offers focused medical training programs tailored to enhance clinical capability across various specialties and skill levels.
               </p>
-              <button className="flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group font-medium">
+              <button className=" md:block hidden flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group font-medium">
                 <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
                 Learn More
               </button>
@@ -68,14 +70,15 @@ export default function Design() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="w-full lg:w-[60%] relative flex justify-center items-center"
           >
-            <div className="relative w-full max-w-[650px] aspect-[4.5/3.4]">
+            <div className="relative w-full max-w-[650px] md:aspect-[4.5/3.4] aspect-[3/3] px-3">
               {/* The BG Circle Image */}
               <div className="absolute inset-0">
                 <Image
                   src="/home/roundimg.png"
                   alt="Design Background"
                   fill
-                  className="object-contain"
+                  sizes="(max-width: 768px) 90vw, 60vw"
+                  className="md:object-contain object-cover"
                   priority
                 />
               </div>
@@ -88,7 +91,7 @@ export default function Design() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.4 + (index * 0.2) }}
-                  className="absolute p-2"
+                  className="absolute md:p-2 "
                   style={{
                     top: point.top,
                     left: point.left,
@@ -105,7 +108,7 @@ export default function Design() {
                     </div>
 
                     {/* Text Label */}
-                    <p className="text-[#1E1B4B] font-medium text-xs md:text-sm lg:text-sm leading-tight whitespace-pre-line drop-shadow-sm max-w-[180px] md:max-w-[240px]">
+                    <p className="text-[#1E1B4B] font-medium text-xs md:text-sm lg:text-sm leading-tight whitespace-pre-line drop-shadow-sm max-w-[260px] md:max-w-[240px]">
                       {point.text}
                     </p>
                   </div>
@@ -113,6 +116,15 @@ export default function Design() {
               ))}
             </div>
           </motion.div>
+
+              <div className="mt-auto md:hidden block  ">
+              <button className="flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group font-medium">
+                <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
+                Learn More
+              </button>
+            </div>
+
+
         </div>
       </div>
     </section>

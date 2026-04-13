@@ -13,7 +13,7 @@ export default function Valuesection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 "
+          className="flex flex-col lg:flex-row justify-between items-start lg:items-end md:gap-6 gap-3 mb-10 "
         >
           <div className="lg:w-[45%]">
             <span className="text-[#262626] font-medium text-sm  mb-1 block">
@@ -41,7 +41,7 @@ export default function Valuesection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="md:col-span-4 flex flex-col gap-4"
           >
-            <div className="bg-[#EEEEEE] rounded-[1.5rem] px-5 py-4  flex flex-col grow justify-center border border-white border-2">
+            <div className="bg-[#EEEEEE] rounded-[1.5rem] px-5 py-5  flex flex-col grow justify-center border border-white border-2">
               <h3 className="text-xl font-medium text-[#262626] mb-4 text-center">
                 Our Mission
               </h3>

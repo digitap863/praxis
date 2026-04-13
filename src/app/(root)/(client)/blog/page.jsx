@@ -67,12 +67,12 @@ export default function BlogPage() {
           transition={{ duration: 0.8 }}
           className="text-center flex flex-col gap-8"
         >
-          <h1 className="text-4xl md:text-5xl text-[#262626] font-medium tracking-tighter leading-tight max-w-md mx-auto">
+          <h1 className="text-4xl md:text-5xl text-[#262626] font-medium tracking-tighter max-w-md mx-auto">
             Scientific discoveries and updates
           </h1>
 
           {/* Categories */}
-          <div className="flex flex-wrap justify-center gap-3 lg:gap-4 pt-4">
+          <div className="flex flex-wrap justify-center gap-5 lg:gap-4 pt-4">
             {categories.map((cat, idx) => (
               <motion.button
                 key={cat}

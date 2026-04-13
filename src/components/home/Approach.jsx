@@ -132,14 +132,14 @@ export default function Approach() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-4xl md:text-5xl font-medium text-[#262626] mt-4 tracking-tight"
         >
-          How Praxis Training Works
+          How Praxis <br className="md:hidden block"  /> Training Works
         </motion.h2>
       </div>
 
       {/* Stacking Cards Section */}
       <div
         ref={sectionRef}
-        className="relative w-full h-screen flex items-center justify-center overflow-hidden "
+        className="relative w-full h-screen flex items-center justify-center overflow-hidden md:px-0 px-3 "
       >
         <div className="relative w-full max-w-xl mx-auto" style={{ height: "80vh" }}>
           {cards.map((card, index) => (

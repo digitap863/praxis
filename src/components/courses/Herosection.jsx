@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Herosection() {
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 bg-[#FAFAFA]  overflow-hidden lg:pt-40">
+    <section className="w-full px-4 md:px-10 lg:px-20 bg-[#FAFAFA]  overflow-hidden lg:pt-40 pt-24">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <motion.h1 

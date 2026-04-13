@@ -77,7 +77,7 @@ export default function Blog() {
 
   return (
     <div className="relative h-auto overflow-hidden bg-[#FAFAFA]  relative" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-4 lg:py-12 py-6 relative bg-[#FAFAFA] ">
+      <div className="max-w-7xl mx-auto px-3 lg:py-12 py-6 relative bg-[#FAFAFA] ">
         <div className="lg:pr-24">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
@@ -88,7 +88,7 @@ export default function Blog() {
           >
             <div className='lg:w-[59%] w-full'>
               <span className="text-[#262626] font-medium text-sm  mb-4">Blogs</span>
-              <h2 className="text-5xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
+              <h2 className="md:text-5xl text-4xl text-[#262626] leading-[1.1] mb-8 tracking-tighter text-nowrap font-medium ">
                 News and Events
               </h2>
             </div>

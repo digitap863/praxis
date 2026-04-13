@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="w-full px-4 md:px-5 py-10">
+    <footer className="w-full px-3 md:px-5 py-10">
       {/* 🔹 Top Gradient CTA Section */}
-      <div className="relative w-full max-w-7xl mx-auto rounded-[3rem] overflow-hidden px-10 py-10 md:px-24 md:py-20 bg-gradient-to-br from-[#D4B0FF] via-[#8594FF] to-[#0C7CFF] flex flex-col items-center text-center text-white">
+      <div className="relative w-full max-w-7xl mx-auto md:rounded-[3rem] rounded-3xl overflow-hidden px-10 py-10 md:px-24 md:py-20 bg-gradient-to-br from-[#D4B0FF] via-[#8594FF] to-[#0C7CFF] flex flex-col items-center text-center text-white">
 
         {/* Decorative Floating Images (Positioned like the mockup) */}
         <motion.div 
@@ -26,7 +26,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="absolute top-10 right-10 hidden lg:block"
         >
-          <Image src="/home/foot2.png" alt="Medical 2" width={220} height={150} className="rounded-2xl transform  transition hover:scale-105" />
+          <Image src="/home/foot2.png" alt="Medical 2" width={220} height={150} style={{ width: 'auto', height: 'auto' }} className="rounded-2xl transform  transition hover:scale-105" />
         </motion.div>
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
@@ -35,7 +35,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="absolute bottom-16 left-28 hidden lg:block"
         >
-          <Image src="/home/foot2.png" alt="Medical 3" width={220} height={150} className="rounded-2xl transform  transition hover:scale-105" />
+          <Image src="/home/foot2.png" alt="Medical 3" width={220} height={150} style={{ width: 'auto', height: 'auto' }} className="rounded-2xl transform  transition hover:scale-105" />
         </motion.div>
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
@@ -56,10 +56,10 @@ export default function Footer() {
           className="relative z-10 max-w-3xl"
         >
           <p className="text-white/80 text-sm font-semibold tracking-widest mb-4">Enroll Today</p>
-          <h2 className="text-4xl md:text-5xl font- mb-6 tracking-tight ">
+          <h2 className="text-3xl md:text-5xl font- mb-6 tracking-tight ">
             Advance Your <br />  Clinical Confidence with Praxis
           </h2>
-          <p className="text-white/90 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-white/90 md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
             Join a learning environment where knowledge is applied, skills are refined,
             and doctors are prepared for the realities of modern medical practice.
           </p>
@@ -83,11 +83,11 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mt-10 max-w-3xl mx-auto bg-[#EEEEEE] border border-gray-100 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm"
+        className="mt-5 md:mt-10 max-w-3xl mx-auto bg-[#EEEEEE] border border-gray-100 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm"
       >
         {/* Logo */}
         <div className="flex items-center">
-          <Image src="/home/logo.png" alt="Praxis Logo" width={200} height={100} />
+          <Image src="/home/logo.png" alt="Praxis Logo" width={200} height={100} style={{ width: 'auto', height: 'auto' }} />
         </div>
 
         {/* Subscription Input */}
@@ -105,7 +105,7 @@ export default function Footer() {
       </motion.div>
 
       {/* 🔹 Copyright */}
-      <div className="mt-8 text-center text-gray-400 text-xs">
+      <div className="md:mt-8  mt-5 text-center text-gray-400 text-xs">
         &copy; {new Date().getFullYear()} Praxis Clinical Training. All rights reserved.
       </div>
     </footer>

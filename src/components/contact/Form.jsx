@@ -23,8 +23,8 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full px-4 md:px-10 lg:px-20 py-24 bg-[#FAFAFA] ">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start pt-20">
+    <section className="w-full px-3 md:px-10 lg:px-20 py-24 bg-[#FAFAFA] ">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start md:pt-20 pt-10">
 
         {/* Left Column: Info */}
         <motion.div 
@@ -44,7 +44,7 @@ export default function ContactForm() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col md:gap-8 gap-5">
             <div className="flex flex-col gap-1">
               <span className="text-[#262626] font-bold text-sm  tracking-wider">Email</span>
               <a href="mailto:info@praxistraining.com" className="text-[#4B5563] hover:text-[#33187F] transition-colors">
@@ -83,7 +83,7 @@ export default function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full lg:w-[60%] bg-[#EEEEEE]/60 rounded-[2.5rem] p-8   border border-white border-2"
+          className="w-full lg:w-[60%] bg-[#EEEEEE]/60 md:rounded-[2.5rem] rounded-3xl md:p-8 p-5   border border-white border-2"
         >
           <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             {/* Name & Email Row */}

@@ -33,7 +33,7 @@ export default function Purpose() {
               y: { duration: 0.8 },
               scale: { duration: 0.3 } 
             }}
-            className="bg-[#EEEEEE] rounded-[1.8rem] p-8 flex flex-col justify-center border border-white border-2 cursor-pointer shadow-sm"
+            className="bg-[#EEEEEE] rounded-[1.8rem] p-8 flex flex-col justify-center border border-white border-2 cursor-pointer"
           >
             <h3 className="text-2xl md:text-3xl text-[#262626] font-medium mb-4">
               Our Mission
@@ -56,7 +56,7 @@ export default function Purpose() {
               y: { duration: 0.8, delay: 0.2 },
               scale: { duration: 0.3 } 
             }}
-            className="bg-[#EEEEEE] rounded-[1.8rem] p-8 flex flex-col justify-center border border-white border-2 cursor-pointer shadow-sm"
+            className="bg-[#EEEEEE] rounded-[1.8rem] p-8 flex flex-col justify-center border border-white border-2 cursor-pointer"
           >
             <h3 className="text-2xl md:text-3xl text-[#262626] font-medium mb-4">
               Our Vision

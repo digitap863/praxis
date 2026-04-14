@@ -104,13 +104,13 @@ function Herosection() {
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               className=" md:flex  hidden "
             >
-              <div className="hidden sm:flex items-end justify-center  ">
+              <div className="hidden md:flex items-end justify-center pb-4 ">
                 <Image src="/home/round.png" alt="spring" width={100} height={200} style={{ width: 'auto', height: 'auto' }} />
-            </div>
+              </div>
 
             {/* Description Text */}
               <div className="max-w-xs pl-3 ">
-                <p className="text-xs sm:text-sm text-gray-900 leading-relaxed py-4">
+                <p className="text-xs sm:text-sm text-gray-900  py-4">
                 Designed by experts. Delivered
                 <br />
                 through hands-on learning.
@@ -118,7 +118,7 @@ function Herosection() {
                 Focused on outcomes that
                 <br />
                 improve patient care.
-              </p>
+                </p>
             </div>
             </motion.div>
           </div>

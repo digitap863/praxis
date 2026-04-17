@@ -9,69 +9,37 @@ import { Autoplay, Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "From Theory to Practice",
-    category: "ARTICLE",
-    date: "JAN 18, 2023",
-    image: "/home/blogimg.png",
-    excerpt: "Learn the essential strategies to attract investors and secure the funding your startup needs to grow.",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Procedural Skills Training",
-    category: "ARTICLE",
-    date: "JAN 15, 2023",
-    image: "/home/blogimg.png",
-    excerpt: "Discover how effective branding can set your startup apart from competitors.",
-  },
-  {
-    id: 3,
-    title: "Acute & Critical Care Training",
-    category: "GUIDE",
-    date: "JAN 12, 2023",
-    image: "/home/blogimg.png",
-    excerpt: "A curated list of the best business blogs every entrepreneur should follow.",
-  },
-  {
-    id: 4,
-    title: "From Theory to Practice",
-    category: "GUIDE",
-    date: "JAN 10, 2023",
-    image: "/home/blogimg.png",
-    excerpt: "Implement these proven strategies to triple your business growth in record time.",
-  },
-  {
-    id: 5,
-    title: "Procedural Skills Training",
-    category: "ARTICLE",
-    date: "JAN 8, 2023",
-    image: "/home/blogimg.png",
-    excerpt: "How to create a business model that stands the test of time and market fluctuations.",
-  },
-  {
-    id: 6,
-    title: "Acute & Critical Care Training",
-    category: "GUIDE",
-    date: "JAN 12, 2023",
-    image: "/home/blogimg.png",
-    excerpt: "A curated list of the best business blogs every entrepreneur should follow.",
-  },
-  {
-    id: 7,
-    title: "Diagnostics & Clinical Decision-Making",
-    category: "GUIDE",
-    date: "JAN 12, 2023",
-    image: "/home/blogimg.png",
-    excerpt: "A curated list of the best business blogs every entrepreneur should follow.",
-  },
-]
+import { useUserBlogStore } from "@/store/blogStore"
+import { useEffect } from "react"
+import Link from "next/link"
+
+// Helper to strip HTML and create excerpt
+const createExcerpt = (html, maxLength = 100) => {
+  if (!html) return "";
+  const plainText = html.replace(/<[^>]*>/g, "");
+  return plainText.length > maxLength 
+    ? plainText.substring(0, maxLength) + "..." 
+    : plainText;
+};
 
 export default function Blog() {
+  const { blogs, loading, fetchBlogs } = useUserBlogStore()
   const sectionRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
+
+  useEffect(() => {
+    fetchBlogs({ limit: 8 })
+  }, [fetchBlogs])
+
+  if (loading && blogs.length === 0) {
+    return (
+      <div className="w-full py-24 bg-[#FAFAFA] flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-[#33187F]/20 border-t-[#33187F] rounded-full animate-spin" />
+      </div>
+    )
+  }
+
+  if (blogs.length === 0) return null
 
 
 
@@ -118,28 +86,32 @@ export default function Blog() {
               1920: { slidesPerView: 3.5, spaceBetween: 10 },
             }}
           >
-            {blogPosts.map((post, index) => (
+            {blogs.map((post, index) => (
               <SwiperSlide
-                key={index}
+                key={post._id || index}
                 className={`w-full`}
               >
                 <motion.div 
-                  // initial={{ opacity: 0, y: 30 }}
-                  // whileInView={{ opacity: 1, y: 0 }}
-                  // viewport={{ once: true }}
-                  // transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`bg-[#FAFAFA]  rounded-lg overflow-hidden h-full flex flex-col`}
+                  className={`bg-[#FAFAFA] rounded-lg overflow-hidden h-full flex flex-col group`}
                 >
-                  <div className="w-full">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-auto rounded-xl object-cover aspect-[4.5/3]"
-                    />
-                  </div>
+                  <Link href={`/blog/${post.slug}`}>
+                    <div className="w-full relative overflow-hidden rounded-xl">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-auto object-cover aspect-[4.5/3] transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </Link>
                   <div className="py-4 lg:px-2 px-1 flex flex-col w-full">
-                    <h3 className="mb-2 text-lg font-medium text-[#262626]">{post.title}</h3>
-                    <p className="text-sm text-[#262626]">{post.excerpt}</p>
+                    <Link href={`/blog/${post.slug}`}>
+                      <h3 className="mb-2 text-lg font-medium text-[#262626] hover:text-[#33187F] transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+                    </Link>
+                    <p className="text-sm text-[#6B7280] line-clamp-3">
+                      {createExcerpt(post.content)}
+                    </p>
                   </div>
                 </motion.div>
               </SwiperSlide>

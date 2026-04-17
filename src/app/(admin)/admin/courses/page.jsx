@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAdminCourseStore } from "@/store/adminCourseStore";
+import TiptapEditor from "@/components/admin/TiptapEditor";
 
 // ─── Icons ──────────────────────────────────────────────
 const PlusIcon = () => (
@@ -248,13 +249,10 @@ function CourseFormModal({ course, onClose, onSave, saving }) {
               <label className="block text-xs font-semibold text-[#6B7280] uppercase tracking-wider mb-2">
                 Full Content / Curriculum <span className="text-red-400">*</span>
               </label>
-              <textarea
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
+              <TiptapEditor 
+                content={content} 
+                onChange={setContent} 
                 placeholder="Detail what this course covers..."
-                required
-                rows={8}
-                className="w-full bg-[#FAFAFA] border border-transparent rounded-xl px-5 py-3.5 outline-none focus:ring-2 focus:ring-[#33187F]/20 focus:bg-white transition-all text-[#262626] text-sm placeholder:text-[#C0C0C0] resize-none"
               />
             </div>
           </div>

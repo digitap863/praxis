@@ -5,57 +5,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const categories = ["All Blogs", "Technology", "Research", "Environment"];
+import { useUserBlogStore } from "@/store/blogStore";
+import { useEffect } from "react";
 
-const blogs = [
-  {
-    id: 1,
-    category: "Technology",
-    date: "November 10, 2024",
-    title: "Technological Innovations in Diagnostic Testing",
-    author: "Boyd Glover",
-    image: "/blog/blog1.png",
-  },
-  {
-    id: 2,
-    category: "Research",
-    date: "November 12, 2024",
-    title: "Research Methods for Accurate Results for any experiment",
-    author: "Jennie Simonis",
-    image: "/blog/blog2.png",
-  },
-  {
-    id: 3,
-    category: "Research",
-    date: "November 14, 2024",
-    title: "Advancements Redefining Science and Research",
-    author: "Jennie Simonis",
-    image: "/blog/blog3.png",
-  },
-  {
-    id: 4,
-    category: "Technology",
-    date: "November 11, 2024",
-    title: "Improving Laboratory Efficiency with Technology",
-    author: "Boyd Glover",
-    image: "/blog/blog4.png",
-  },
-  {
-    id: 5,
-    category: "Environment",
-    date: "November 18, 2024",
-    title: "Eco-Friendly Solutions in Laboratory Settings",
-    author: "Esther Howard",
-    image: "/blog/blog5.png",
-  },
-];
+const categories = ["All Blogs", "Technology", "Research", "Environment", "General"];
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("All Blogs");
+  const { blogs, loading, fetchBlogs } = useUserBlogStore();
 
-  const filteredBlogs = blogs.filter(blog => 
-    selectedCategory === "All Blogs" || blog.category === selectedCategory
-  );
+  useEffect(() => {
+    fetchBlogs({ 
+      category: selectedCategory === "All Blogs" ? "" : selectedCategory,
+      limit: 20 
+    });
+  }, [selectedCategory, fetchBlogs]);
+
+  if (loading && blogs.length === 0) {
+    return (
+      <div className="w-full py-24 bg-[#FAFAFA] flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-[#007BFF]/20 border-t-[#007BFF] rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <main className="w-full bg-[#FAFAFA]  py-24 px-4 md:px-10 lg:px-20">
@@ -94,8 +66,8 @@ export default function BlogPage() {
 
         {/* Blog List Area */}
         <div className="flex flex-col gap-10 md:gap-16 pt-10">
-          {filteredBlogs.map((blog, idx) => (
-            <Link key={blog.id} href={`/blog/${blog.id}`}>
+          {blogs.map((blog, idx) => (
+            <Link key={blog._id || idx} href={`/blog/${blog.slug}`}>
               <motion.div 
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +91,7 @@ export default function BlogPage() {
                 <div className="flex-1 flex flex-col justify-center gap-4">
                   <div className="flex items-center gap-2 text-xs font-medium text-[#6B7280]">
                     <span>/</span>
-                    <span>{blog.category}</span>
+                    <span className="uppercase">{blog.category}</span>
                     <span>/</span>
                     <span>{blog.date}</span>
                     <span>/</span>
@@ -130,8 +102,8 @@ export default function BlogPage() {
                   </h2>
 
                   <div className="flex items-center gap-3 lg:pt-10">
-                    <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden ring-2 ring-white shadow-sm">
-                      {/* Placeholder Avatar */}
+                    <div className="w-10 h-10 rounded-full bg-[#007BFF]/10 flex items-center justify-center overflow-hidden ring-2 ring-white shadow-sm text-[#007BFF] font-bold text-lg">
+                      {blog.author?.charAt(0) || "P"}
                     </div>
                     <span className="text-sm font-semibold text-[#4B5563]">{blog.author}</span>
                   </div>

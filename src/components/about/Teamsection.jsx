@@ -2,38 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
-
-const teamMembers = [
-  {
-    name: "Dr. Matthew Harris",
-    role: "Founder & CEO",
-    description: "Dentist providing comprehensive dental care, from checkups to cosmetic solutions.",
-    image: "/home/doc.png",
-    isMain: true,
-  },
-  {
-    name: "Dr. Benjamin Lee",
-    role: "Founder & CEO",
-    description: "Dermatologist specializing in skin health and advanced cosmetic treatments.",
-    image: "/home/doc.png",
-    isMain: true,
-  },
-  {
-    name: "Dr. Sarah Mitchell",
-    role: "Founder & CEO",
-    description: "Expert cardiologist focused on preventive heart care and advanced treatments.",
-    image: "/home/doc.png",
-    isMain: true,
-  },
-  {
-    name: "Dr. Daniel Hayes",
-    role: "Founder & CEO",
-    description: "Neurologist specializing in brain and nervous system disorders with a patient-centered approach.",
-    image: "/home/doc.png",
-    isMain: true,
-  },
-];
+import { useTeamStore } from "@/store/teamStore";
+import { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -85,25 +55,21 @@ function TeamCard({ member, index }) {
         >
           <h3
             className={`text-2xl font-medium mb-1 transition-colors duration-300 ${
-              member.isMain
-                ? isHovered
-                  ? " text-[#262626]   "
-                  : "  text-white"
-                : "text-[#262626]"
+              isHovered
+                ? " text-[#262626]   "
+                : "  text-white"
             }`}
           >
             {member.name}
           </h3>
           <p
             className={`text-sm font-medium transition-colors duration-300 ${
-              member.isMain
-                ? isHovered
-                  ? "  text-[#262626]  "
-                  : "text-white    "
-                : "text-[#262626]"
+              isHovered
+                ? "  text-[#262626]  "
+                : "text-white    "
             }`}
           >
-            {member.role}
+            {member.position}
           </p>
         </motion.div>
 
@@ -116,11 +82,9 @@ function TeamCard({ member, index }) {
         >
           <p
             className={`text-sm transition-colors duration-300 ${
-              member.isMain
-                ? isHovered
-                  ? "text-[#262626]"
-                  : "text-white"
-                : "text-[#262626]"
+              isHovered
+                ? "text-[#262626]"
+                : "text-white"
             }`}
           >
             {member.description}
@@ -174,6 +138,21 @@ function TeamCard({ member, index }) {
 }
 
 export default function Teamsection() {
+  const { teams, loading, fetchTeams } = useTeamStore();
+
+  useEffect(() => {
+    fetchTeams();
+  }, [fetchTeams]);
+
+  if (loading && teams.length === 0) {
+    return (
+      <div className="w-full py-24 bg-[#FAFAFA] flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-[#007BFF]/20 border-t-[#007BFF] rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (teams.length === 0) return null;
   return (
     <section className="w-full px-4 md:px-10 lg:px-20 md:py-24 py-16 bg-[#FAFAFA] overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -199,8 +178,8 @@ export default function Teamsection() {
             slidesPerView={1.2}
             className="w-full !overflow-visible"
           >
-            {teamMembers.map((member, index) => (
-              <SwiperSlide key={index}>
+            {teams.map((member, index) => (
+              <SwiperSlide key={member._id || index}>
                 <TeamCard member={member} index={index} />
               </SwiperSlide>
             ))}
@@ -209,8 +188,8 @@ export default function Teamsection() {
 
         {/* Desktop/Tablet: Grid */}
         <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {teamMembers.map((member, index) => (
-            <TeamCard key={index} member={member} index={index} />
+          {teams.map((member, index) => (
+            <TeamCard key={member._id || index} member={member} index={index} />
           ))}
         </div>
       </div>

@@ -10,71 +10,29 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { isMobile } from "react-device-detect"
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "Diagnostics & Clinical Decision-Making",
-    category: "ARTICLE",
-    date: "JAN 18, 2023",
-    image: "/home/serv1.png",
-    excerpt: "Learn the essential strategies to attract investors and secure the funding your startup needs to grow.",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Procedural Skills Training",
-    category: "ARTICLE",
-    date: "JAN 15, 2023",
-    image: "/home/serv2.png",
-    excerpt: "Discover how effective branding can set your startup apart from competitors.",
-  },
-  {
-    id: 3,
-    title: "Acute & Critical Care Training",
-    category: "GUIDE",
-    date: "JAN 12, 2023",
-    image: "/home/serv1.png",
-    excerpt: "A curated list of the best business blogs every entrepreneur should follow.",
-  },
-  {
-    id: 4,
-    title: "Diagnostics & Clinical Decision-Making",
-    category: "GUIDE",
-    date: "JAN 10, 2023",
-    image: "/home/serv2.png",
-    excerpt: "Implement these proven strategies to triple your business growth in record time.",
-  },
-  {
-    id: 5,
-    title: "Procedural Skills Training",
-    category: "ARTICLE",
-    date: "JAN 8, 2023",
-    image: "/home/serv1.png",
-    excerpt: "How to create a business model that stands the test of time and market fluctuations.",
-  },
-  {
-    id: 6,
-    title: "Acute & Critical Care Training",
-    category: "GUIDE",
-    date: "JAN 12, 2023",
-    image: "/home/serv2.png",
-    excerpt: "A curated list of the best business blogs every entrepreneur should follow.",
-  },
-  {
-    id: 7,
-    title: "Diagnostics & Clinical Decision-Making",
-    category: "GUIDE",
-    date: "JAN 12, 2023",
-    image: "/home/serv2.png",
-    excerpt: "A curated list of the best business blogs every entrepreneur should follow.",
-  },
-]
+import { useCourseStore } from "@/store/courseStore"
+import { useEffect } from "react"
 
 export default function Service() {
+  const { courses, loading, fetchCourses } = useCourseStore()
   const sectionRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [prevEl, setPrevEl] = useState(null)
   const [nextEl, setNextEl] = useState(null)
+
+  useEffect(() => {
+    fetchCourses(10)
+  }, [fetchCourses])
+
+  if (loading && courses.length === 0) {
+    return (
+      <div className="w-full py-24 bg-[#FAFAFA] flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-[#33187F]/20 border-t-[#33187F] rounded-full animate-spin" />
+      </div>
+    )
+  }
+
+  if (courses.length === 0) return null
 
 
   return (
@@ -118,9 +76,9 @@ export default function Service() {
               1440: { slidesPerView: 3.5, spaceBetween: 24 },
             }}
           >
-            {blogPosts.map((post, index) => (
+            {courses.map((course, index) => (
               <SwiperSlide
-                key={index}
+                key={course._id || index}
                 className={`pb-4 ${index === activeIndex && !isMobile ? 'first-visible-slide' : ''}`}>
                 <motion.div 
                    initial={{ opacity: 0, scale: 0.95 }}
@@ -129,17 +87,21 @@ export default function Service() {
                    transition={{ duration: 0.5, delay: index * 0.1 }}
                    className="flex flex-col h-full"
                 >
-                  <div className="w-full relative rounded-2xl md:rounded-3xl overflow-hidden  md:aspect-[5.9/3] aspect-[4.5/3] bg-gray-100 shadow-sm border border-white border-2">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                                          {/* className="w-full h-auto rounded-xl object-cover border border-white border-2" */}
-
-                  </div>
+                  <Link href={`/courses/${course.slug}`}>
+                    <div className="w-full relative rounded-2xl md:rounded-3xl overflow-hidden  md:aspect-[5.9/3] aspect-[4.5/3] bg-gray-100 shadow-sm border border-white border-2 group">
+                      <img
+                        src={course.image}
+                        alt={course.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </Link>
                   <div className="py-5 px-1">
-                    <h3 className="text-xl md:text-2xl font-medium text-[#262626] leading-tight">{post.title}</h3>
+                    <Link href={`/courses/${course.slug}`}>
+                      <h3 className="text-xl md:text-2xl font-medium text-[#262626] leading-tight hover:text-[#33187F] transition-colors">
+                        {course.title}
+                      </h3>
+                    </Link>
                   </div>
                 </motion.div>
               </SwiperSlide>

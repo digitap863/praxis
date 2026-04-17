@@ -10,6 +10,17 @@ import "swiper/css";
 
 function TeamCard({ member, index }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobileDevice(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // On mobile, we want the image to be visible by default (covered = false)
+  const showImage = isMobileDevice || isHovered;
 
   return (
     <motion.div
@@ -17,8 +28,8 @@ function TeamCard({ member, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
+      onHoverStart={() => !isMobileDevice && setIsHovered(true)}
+      onHoverEnd={() => !isMobileDevice && setIsHovered(false)}
       className="relative rounded-[1.5rem] overflow-hidden min-h-[400px] shadow-sm group cursor-pointer h-full"
     >
       {/* Background Image - Always present */}
@@ -36,7 +47,7 @@ function TeamCard({ member, index }) {
         className="absolute inset-0 bg-[#007BFF]"
         initial={{ y: "0%" }}
         animate={{
-          y: isHovered ? "-100%" : "0%",
+          y: showImage ? "-100%" : "0%",
         }}
         transition={{
           duration: 0.6,
@@ -55,7 +66,7 @@ function TeamCard({ member, index }) {
         >
           <h3
             className={`text-2xl font-medium mb-1 transition-colors duration-300 ${
-              isHovered
+              showImage
                 ? " text-[#262626]   "
                 : "  text-white"
             }`}
@@ -64,7 +75,7 @@ function TeamCard({ member, index }) {
           </h3>
           <p
             className={`text-sm font-medium transition-colors duration-300 ${
-              isHovered
+              showImage
                 ? "  text-[#262626]  "
                 : "text-white    "
             }`}
@@ -82,7 +93,7 @@ function TeamCard({ member, index }) {
         >
           <p
             className={`text-sm transition-colors duration-300 ${
-              isHovered
+              showImage
                 ? "text-[#262626]"
                 : "text-white"
             }`}
@@ -91,32 +102,7 @@ function TeamCard({ member, index }) {
           </p>
         </motion.div>
 
-        {/* Hover Indicator */}
-        <motion.div
-          className="absolute bottom-6 right-6 w-10 h-10 rounded-full border-2 border-white flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{
-            opacity: isHovered ? 1 : 0,
-            scale: isHovered ? 1 : 0,
-          }}
-          transition={{ duration: 0.3 }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3 8h10M8 3l5 5-5 5"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </motion.div>
+       
       </div>
 
       {/* Ripple effect on hover */}

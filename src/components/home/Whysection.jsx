@@ -65,15 +65,17 @@ export default function WhyPraxis() {
       const setHeroState = () => {
         const sectionRect = section.getBoundingClientRect();
         const cardRect = firstCard.getBoundingClientRect();
-        const targetX =
-          sectionRect.left +
-          sectionRect.width / 2 -
-          (cardRect.left + cardRect.width / 2);
+        
+        // Calculate scale to make card roughly 90% of section width
+        const targetScale = (sectionRect.width * 0.85) / cardRect.width;
+        
+        // Calculate X to center the card exactly
+        const targetX = (sectionRect.width / 2) - (cardRect.left - sectionRect.left + cardRect.width / 2);
 
         gsap.set(firstCard, {
-          x: 300,
-          y: 30,
-          scale: 1.7,
+          x: targetX,
+          y: 50,
+          scale: targetScale,
           zIndex: 10,
           transformOrigin: "center center",
         });
@@ -142,10 +144,10 @@ export default function WhyPraxis() {
   return (
     <div
       ref={sectionRef}
-      className="w-full min-h-screen bg-[#FAFAFA] flex flex-col overflow-hidden px-6 md:px-16 py-16 gap-12"
+      className="w-full min-h-screen bg-[#FAFAFA] flex flex-col overflow-hidden px-6 md:px-16 py-16 gap-12 mx-auto "
     >
       {/* Heading + description */}
-      <div className="flex-shrink-0 w-full lg:w-[70%]">
+      <div className="flex-shrink-0 w-full lg:w-[70%] max-w-7xl ">
         <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 leading-tight">
           Why Doctors
           <br />
@@ -228,10 +230,10 @@ export default function WhyPraxis() {
 
           {/* Custom Navigation Buttons */}
           <div className="flex justify-end gap-4 pr-4">
-            <button className="why-swiper-prev w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 active:scale-95 transition-all disabled:opacity-50">
+            <button className="why-swiper-prev w-14 h-14 rounded-full border border-[#311A86] flex items-center justify-center text-[#311A86] active:scale-95 transition-all disabled:opacity-50">
               <IoArrowBack size={28} />
             </button>
-            <button className="why-swiper-next w-14 h-14 rounded-full bg-[#311A86] flex items-center justify-center text-white active:scale-95 shadow-lg shadow-indigo-200 transition-all disabled:opacity-30">
+            <button className="why-swiper-next w-14 h-14 rounded-full flex items-center justify-center text-[#311A86] active:scale-95 transition-all disabled:opacity-30  border border-[#311A86] ">
               <IoArrowForward size={28} />
             </button>
           </div>

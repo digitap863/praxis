@@ -12,7 +12,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    { name: "About Us", path: "/about" },
     { name: "Courses", path: "/courses" },
     { name: "Blog", path: "/blog" },
   ];
@@ -72,7 +72,7 @@ export default function Navbar() {
           {/* 🔹 Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-2xl text-purple-700"
+            className="md:hidden text-3xl text-purple-700"
           >
             {open ? "✕" : "☰"}
           </button>
@@ -116,7 +116,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.path}
-                      className={`text-4xl font-semibold transition-all duration-300 ${
+                      className={`text-4xl font-medium transition-all duration-300 ${
                         pathname === link.path ? "text-blue-400" : "text-white/80 hover:text-white"
                       }`}
                       onClick={() => setOpen(false)}
@@ -136,10 +136,11 @@ export default function Navbar() {
               >
                 <Link 
                   href="/contact" 
-                  className="flex justify-center items-center gap-3 bg-white text-[#1E1B4B] w-full py-5 rounded-2xl font-bold text-lg shadow-2xl hover:bg-blue-50 transition-all active:scale-95"
+                  className="flex justify-center items-center gap-3 bg-white text-[#1E1B4B] w-full py-5 rounded-2xl font-bold text-xl hover:bg-blue-50 transition-all active:scale-95 rounded-full "
                   onClick={() => setOpen(false)}
                 >
-                  Get in touch
+                 <span className="w-2.5 h-2.5  rounded-full bg-blue-400 inline-block group-hover:bg-pink-500  transition-all duration-300"></span>
+                  Contact Us
                 </Link>
               </motion.div>
             </motion.div>

@@ -19,6 +19,14 @@ const neuropolitical = localFont({
   display: "swap",
 });
 
+export const metadata = {
+  title: "Praxis",
+  description: "Praxis - From Theory to Practice",
+  icons: {
+    icon: "/favicon.png",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="overflow-x-hidden" suppressHydrationWarning>

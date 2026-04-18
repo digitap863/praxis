@@ -67,7 +67,7 @@ export default function WhyPraxis() {
         const cardRect = firstCard.getBoundingClientRect();
         
         // Calculate scale to make card roughly 90% of section width
-        const targetScale = (sectionRect.width * 0.85) / cardRect.width;
+        const targetScale = (sectionRect.width * 0.87) / cardRect.width;
         
         // Calculate X to center the card exactly
         const targetX = (sectionRect.width / 2) - (cardRect.left - sectionRect.left + cardRect.width / 2);
@@ -120,12 +120,13 @@ export default function WhyPraxis() {
       ScrollTrigger.create({
         animation: tl,
         trigger: cardsContainer,
-        start: "top 20%",
+        start: "top 27%",
         end: () => `+=${HERO_BUDGET + getHScrollDist()}`,
         pin: true,
         scrub: 1,
         anticipatePin: 1,
         invalidateOnRefresh: true,
+        markers:true
       });
 
       // Remove old standalone stagger
@@ -147,7 +148,8 @@ export default function WhyPraxis() {
       className="w-full min-h-screen bg-[#FAFAFA] flex flex-col overflow-hidden px-6 md:px-16 py-16 gap-12 mx-auto "
     >
       {/* Heading + description */}
-      <div className="flex-shrink-0 w-full lg:w-[70%] max-w-7xl ">
+      <div className="w-full max-w-7xl mx-auto">
+      <div className="flex-shrink-0 w-full  ">
         <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 leading-tight">
           Why Doctors
           <br />
@@ -158,6 +160,7 @@ export default function WhyPraxis() {
           real-world medical practice through structured, practical, and
           clinically relevant training.
         </p>
+      </div>
       </div>
 
       {/* Desktop View (GSAP Horizontal Scroll) */}

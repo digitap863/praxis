@@ -56,7 +56,7 @@ export default function Design() {
               <p className="text-[#4B5563] text-sm leading-relaxed mb-10 max-w-lg">
                 Praxis offers focused medical training programs tailored to enhance clinical capability across various specialties and skill levels.
               </p>
-              <Link href="/about" className=" md:block hidden flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group font-medium text-center justify-center">
+              <Link href="/about" className=" md:block hidden flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group font-medium w-fit">
                 <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
                 Learn More
               </Link>
@@ -119,7 +119,7 @@ export default function Design() {
           </motion.div>
 
               <div className="mt-auto md:hidden block  ">
-              <Link href="/about" className="flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group font-medium text-center justify-center">
+              <Link href="/about" className="flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group font-medium w-fit">
                 <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
                 Learn More
               </Link>

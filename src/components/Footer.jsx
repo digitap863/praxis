@@ -66,7 +66,7 @@ export default function Footer() {
           </p>
 
           <div className="flex flex-col gap-4 justify-center items-center">
-            <Link href="/courses" className="flex items-center gap-3 bg-[#1E1B4B] text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group">
+            <Link href="/courses" className="flex items-center gap-3 bg-[#1E1B4B] text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group w-fit">
               <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:bg-pink-500 transition-all duration-300"></span>
               Enroll in a Program
             </Link>

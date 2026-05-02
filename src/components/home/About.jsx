@@ -28,7 +28,7 @@ export default function About() {
             <h2 className="text-2xl md:text-4xl font-medium text-[#262626] md:mb-6 mb-4  tracking-tight leading-tight">
               The 360° <br className="hidden md:block" /> Support Pillar
             </h2>
-            <Link href="/courses" className="flex items-center gap-3 bg-[#33187F] text-white px-6 md:px-8 py-3.5 rounded-full hover:bg-opacity-90 transition group font-medium text-sm md:text-base ">
+            <Link href="/courses" className="flex items-center gap-3 bg-[#33187F] text-white px-6 md:px-8 py-3.5 rounded-full hover:bg-opacity-90 transition group font-medium text-sm md:text-base w-fit">
               <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
               Explore the Praxis Method
             </Link>
@@ -75,7 +75,7 @@ export default function About() {
                 individualized attention from senior surgeons and 24/7 digital
                 mentorship that follows you into your own operating theater.
               </p>
-              <Link href="/about" className="flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition group font-medium text-sm">
+              <Link href="/about" className="flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition group font-medium text-sm w-fit">
                 <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
                 Learn More
               </Link>

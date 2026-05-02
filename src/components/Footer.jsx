@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -65,10 +66,10 @@ export default function Footer() {
           </p>
 
           <div className="flex flex-col gap-4 justify-center items-center">
-            <button className="flex items-center gap-3 bg-[#1E1B4B] text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group">
+            <Link href="/courses" className="flex items-center gap-3 bg-[#1E1B4B] text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition shadow-lg group">
               <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:bg-pink-500 transition-all duration-300"></span>
               Enroll in a Program
-            </button>
+            </Link>
             <button className="flex items-center gap-3 bg-[#FAFAFA]/]  border border-white/90 text-white px-8 py-3 rounded-full hover:bg-[#FAFAFA]/30 transition group">
               <span className="w-2 h-2 rounded-full bg-pink-400  transition"></span>
               Chat with Our Team

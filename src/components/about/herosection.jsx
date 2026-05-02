@@ -12,10 +12,14 @@ const aboutImages = [
     { src: "/home/abouimg2.png", width: 30 ,mobwidth: 60 },
     { src: "/home/abouimg3.png", width: 20 ,mobwidth: 40 },
     { src: "/home/abouimg4.png", width: 20 ,mobwidth: 40 },
+    { src: "/home/abouimg5.png", width: 20 ,mobwidth: 40 },
+    { src: "/home/abouimg6.png", width: 30 ,mobwidth: 60 },
     { src: "/home/abouimg1.png", width: 20 ,mobwidth: 40 },
     { src: "/home/abouimg2.png", width: 30 ,mobwidth: 60 },
     { src: "/home/abouimg3.png", width: 20 ,mobwidth: 40 },
     { src: "/home/abouimg4.png", width: 20 ,mobwidth: 40 },
+    { src: "/home/abouimg5.png", width: 20 ,mobwidth: 40 },
+    { src: "/home/abouimg6.png", width: 30 ,mobwidth: 60 },
 ];
 
 export default function AboutHero() {

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function About() {
   const supportList = [
@@ -23,14 +24,14 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="w-full bg-[#F3F3F3]/70 rounded-[1.5rem] md:rounded-[1.2rem] px-4 md:px-28 py-8 md:py-7 flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-12 md:gap-12"
         >
-          <div className="max-w-md w-full">
+          <div className="max-w-sm w-full">
             <h2 className="text-2xl md:text-4xl font-medium text-[#262626] md:mb-6 mb-4  tracking-tight leading-tight">
               The 360° <br className="hidden md:block" /> Support Pillar
             </h2>
-            <button className="flex items-center gap-3 bg-[#33187F] text-white px-6 md:px-8 py-3.5 rounded-full hover:bg-opacity-90 transition group font-medium text-sm md:text-base">
+            <Link href="/courses" className="flex items-center gap-3 bg-[#33187F] text-white px-6 md:px-8 py-3.5 rounded-full hover:bg-opacity-90 transition group font-medium text-sm md:text-base ">
               <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
               Explore the Praxis Method
-            </button>
+            </Link>
           </div>
 
           <div className="w-full md:w-auto">
@@ -74,10 +75,10 @@ export default function About() {
                 individualized attention from senior surgeons and 24/7 digital
                 mentorship that follows you into your own operating theater.
               </p>
-              <button className="flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition group font-medium text-sm">
+              <Link href="/about" className="flex items-center gap-3 bg-[#33187F] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition group font-medium text-sm">
                 <span className="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition"></span>
                 Learn More
-              </button>
+              </Link>
             </div>
           </motion.div>
 

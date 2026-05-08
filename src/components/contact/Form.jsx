@@ -62,8 +62,9 @@ export default function ContactForm() {
             <div className="flex flex-col gap-1">
               <span className="text-[#262626] font-bold text-sm  tracking-wider">Office Address</span>
               <p className="text-[#4B5563]">
-                [Full Address Line] <br />
-                [City, State, PIN Code]
+               43/3359, Kalyani Complex, <br/>
+Pallissery Jn, Puthiya Road, Palarivattom,<br/>
+Kochi, Kerala - 682025
               </p>
             </div>
 

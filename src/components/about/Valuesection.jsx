@@ -50,7 +50,7 @@ export default function Valuesection() {
               </p>
             </div>
             <div className="relative w-full aspect-[14/9] rounded-[1.5rem] overflow-hidden border border-white border-2 group">
-              <Image src="/home/val1.svg" alt="Value 1" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+              <Image src="/home/mission_img1.jpg" alt="Value 1" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
             </div>
           </motion.div>
 

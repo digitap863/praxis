@@ -87,18 +87,15 @@ export default function About() {
 
             {/* Row 1: Items 1, 2, 3 */}
             <div className="flex flex-wrap md:flex-nowrap gap-4 md:gap-6 w-full">
-              {/* Item 1: 40+ */}
+              {/* Item 1: Image 1 */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="w-[calc(40%-0.5rem)] md:w-[calc(28%-0.75rem)] bg-[#EEEEEE] rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-6 flex flex-col justify-center items-center text-center aspect-square"
+                className="w-[calc(40%-0.5rem)] md:w-[calc(28%-0.75rem)] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden aspect-square relative border-2 border-white"
               >
-                <span className="text-3xl md:text-5xl font-medium text-[#262626] mb-1 md:mb-2 font-neuropolitical" style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }} >40+</span>
-                <p className="text-[#262626] font-bold text-[10px] md:text-xs uppercase leading-tight tracking-widest">
-                  Original <br /> Equipments
-                </p>
+                <Image src="/home/home_About_1.jpg" alt="About 1" fill sizes="(max-width: 768px) 40vw, 28vw" className="object-cover transition-transform hover:scale-110 duration-500" />
               </motion.div>
 
               {/* Item 2: Machine */}
@@ -120,7 +117,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="w-[calc(40%-0.5rem)] md:w-[calc(28%-0.75rem)] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden aspect-square relative border-2 border-white hidden md:block"
               >
-                <Image src="/home/about2.png" alt="Medical Screen" fill sizes="(max-width: 768px) 40vw, 28vw" className="object-cover transition-transform hover:scale-110 duration-500" />
+                <Image src="/home/home_About_3.jpg" alt="Medical Screen" fill sizes="(max-width: 768px) 40vw, 28vw" className="object-cover transition-transform hover:scale-110 duration-500" />
               </motion.div>
             </div>
 
@@ -130,40 +127,37 @@ export default function About() {
               <div className="w-[calc(15%-0.75rem)]">
               </div>
 
-              {/* Item 4: Textured Object (about4) */}
+              {/* Item 4: Image 4 */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="w-[calc(40%-0.5rem)] md:w-[calc(28%-0.75rem)] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden aspect-square relative bg-[#EBEBEB] border-2 border-white"
+                className="w-[calc(40%-0.5rem)] md:w-[calc(28%-0.75rem)] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden aspect-square relative border-2 border-white"
               >
-                <Image src="/home/about4.png" alt="Textured Object" fill sizes="(max-width: 768px) 40vw, 28vw" className="object-cover p-2 md:p-4 transition-transform hover:scale-110 duration-500" />
+                <Image src="/home/home_About_4.jpg" alt="About 4" fill sizes="(max-width: 768px) 40vw, 28vw" className="object-cover transition-transform hover:scale-110 duration-500" />
               </motion.div>
 
-              {/* Item 5: 10Y */}
+              {/* Item 5: Image 5 */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="w-[calc(40%-0.5rem)] md:w-[calc(28%-0.75rem)] bg-[#EEEEEE] rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-6 flex flex-col justify-center items-center text-center aspect-square border-2 border-white"
+                className="w-[calc(40%-0.5rem)] md:w-[calc(28%-0.75rem)] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden aspect-square relative border-2 border-white"
               >
-                <span className="text-3xl md:text-5xl font-medium text-[#262626] mb-1 md:mb-2 tracking-tighter uppercase font-neuropolitical" style={{ fontFamily: "var(--font-neuropolitical), sans-serif" }} >10y</span>
-                <p className="text-[#262626] font-bold text-[10px] md:text-xs uppercase leading-tight tracking-widest">
-                   Of Expertise
-                </p>
+                <Image src="/home/home_About_5.jpg" alt="About 5" fill sizes="(max-width: 768px) 40vw, 28vw" className="object-cover transition-transform hover:scale-110 duration-500" />
               </motion.div>
 
-              {/* Item 6: Laptop Hands */}
+              {/* Item 6: Image 6 */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="w-[calc(50%-0.5rem)] md:w-[calc(28%-0.75rem)] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden aspect-square relative border-2 border-white  hidden md:block"
+                className="w-[calc(50%-0.5rem)] md:w-[calc(28%-0.75rem)] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden aspect-square relative border-2 border-white hidden md:block"
               >
-                <Image src="/home/about3.png" alt="Gloved Hands Laptop" fill sizes="(max-width: 768px) 50vw, 28vw" className="object-cover transition-transform hover:scale-110 duration-500" />
+                <Image src="/home/home_About_6.jpg" alt="About 6" fill sizes="(max-width: 768px) 50vw, 28vw" className="object-cover transition-transform hover:scale-110 duration-500" />
               </motion.div>
             </div>
           </div>

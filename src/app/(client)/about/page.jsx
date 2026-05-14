@@ -13,7 +13,7 @@ function Page() {
   return (
     <>
       <AboutHero />
-      <Milestones />
+      {/* <Milestones /> */}
       <Valuesection />
       <Ceosection />
       <Teamsection />

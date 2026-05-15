@@ -11,7 +11,7 @@ import Blog from '@/components/home/Blog'
 
 function Page() {
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full">
       <AboutHero />
       {/* <Milestones /> */}
       <Valuesection />

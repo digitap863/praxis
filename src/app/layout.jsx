@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${publicSans.variable} ${neuropolitical.variable} antialiased bg-black overflow-x-hidden`}
         style={{ fontFamily: "var(--font-public-sans), sans-serif" }}
+        suppressHydrationWarning
       >
         {children}
       </body>

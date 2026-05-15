@@ -11,7 +11,7 @@ import Blog from '@/components/home/Blog'
 
 function Page() {
   return (
-    <>
+    <div className="w-full flex flex-col">
       <AboutHero />
       {/* <Milestones /> */}
       <Valuesection />
@@ -21,9 +21,7 @@ function Page() {
       <Design />
       <Faq />
       <Blog />
-    
-      
-      </>
+    </div>
   )
 }
 

@@ -1,7 +1,9 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -43,7 +45,7 @@ export default function WhyPraxis() {
   const firstCardRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     // Check for mobile on mount and resize
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
